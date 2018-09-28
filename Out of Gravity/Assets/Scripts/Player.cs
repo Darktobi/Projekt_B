@@ -12,10 +12,12 @@ public class Player : MonoBehaviour {
     private bool hasJumped = false;
 
     Rigidbody2D rbody;
+    Animator anim;
 
 	// Use this for initialization
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         jumpTimer = maxJumpTimer;
 	}
 	
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour {
             {
                 hasJumped = false;
                 jumpTimer = 1f;
+                anim.SetBool("has jumped", false);
             }
         }  
 	}
@@ -80,11 +83,20 @@ public class Player : MonoBehaviour {
         }
 
         Vector2 dir = new Vector2(x * speed, rbody.velocity.y);
+        if(dir.x != 0)
+        {
+            anim.SetBool("is walking", true);
+        }
+        else
+        {
+            anim.SetBool("is walking", false);
+        }
         rbody.velocity = dir;
     }
 
     private void gravityOffMovement(float x, float y)
     {
+        anim.SetBool("is walking", false);
         Vector2 dir = new Vector2(x * (speed / 2), y * (speed / 2));
         rbody.AddForce(dir);
 
@@ -97,7 +109,8 @@ public class Player : MonoBehaviour {
     private void jump(float x)
     {
         if (!hasJumped)
-        {    
+        {
+            anim.SetBool("has jumped", true);
             rbody.AddForce(new Vector2(0, 250f));
             rbody.velocity = new Vector2(x * speed, rbody.velocity.y);
             hasJumped = true;
