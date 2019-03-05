@@ -31,6 +31,5 @@ sysinfo.txt
 
 # Builds
 *.unitypackage
-VillageDefender/.vs/
-*.ide-shm
-*.ide-wal
+Out of Gravity/.vs/
+
