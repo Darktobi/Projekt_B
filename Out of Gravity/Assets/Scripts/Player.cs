@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
     public float maxJumpTimer = 1f;
     private float jumpTimer;
     public GravityChanger gravityChanger;
+    //Prototype Lösung
+    public bool hasKey = false;
 
     private bool hasJumped = false;
 
@@ -26,6 +28,11 @@ public class Player : MonoBehaviour {
 
         Move();
 
+        if(Input.GetKey(KeyCode.C))
+        {
+            Debug.Log(hasKey);
+        }
+
         if (hasJumped)
         {
             jumpTimer -= Time.deltaTime;
@@ -37,6 +44,16 @@ public class Player : MonoBehaviour {
             }
         }  
 	}
+
+    public void addKey()
+    {
+        hasKey = true;
+    }
+
+    public void removeKey()
+    {
+        hasKey = false;
+    }
 
     private void Move()
     {
