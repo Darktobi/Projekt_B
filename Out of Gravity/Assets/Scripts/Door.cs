@@ -5,8 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Test");
         if (collision.gameObject.tag == "Player")
         {
             Player player = collision.gameObject.GetComponent<Player>();
@@ -16,7 +17,7 @@ public class Door : MonoBehaviour {
 
     private void checkForKey(Player player)
     {
-        if(player.hasKey)
+        if(player.numOfKeys > 0)
         {
             Debug.Log("Schlüssel vorhanden!");
             player.removeKey();

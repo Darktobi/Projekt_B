@@ -5,11 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public float speed = 10;
-    public float maxJumpTimer = 1f;
-    private float jumpTimer;
+    public float jumpForce = 350f;
     public GravityChanger gravityChanger;
     //Prototype Lösung
-    public bool hasKey = false;
+    public int numOfKeys = 0;
 
     private bool hasJumped = false;
 
@@ -20,7 +19,6 @@ public class Player : MonoBehaviour {
 	void Start () {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        jumpTimer = maxJumpTimer;
 	}
 	
 	// Update is called once per frame
@@ -28,31 +26,16 @@ public class Player : MonoBehaviour {
 
         Move();
 
-        if(Input.GetKey(KeyCode.C))
-        {
-            Debug.Log(hasKey);
-        }
-
-        if (hasJumped)
-        {
-            jumpTimer -= Time.deltaTime;
-            if(jumpTimer <= 0)
-            {
-                hasJumped = false;
-                jumpTimer = 1f;
-                anim.SetBool("has jumped", false);
-            }
-        }  
 	}
 
     public void addKey()
     {
-        hasKey = true;
+        numOfKeys++;
     }
 
     public void removeKey()
     {
-        hasKey = false;
+        numOfKeys--;
     }
 
     private void Move()
@@ -102,6 +85,7 @@ public class Player : MonoBehaviour {
         Vector2 dir = new Vector2(x * speed, rbody.velocity.y);
         if(dir.x != 0)
         {
+
             anim.SetBool("is walking", true);
         }
         else
@@ -128,10 +112,20 @@ public class Player : MonoBehaviour {
         if (!hasJumped)
         {
             anim.SetBool("has jumped", true);
-            rbody.AddForce(new Vector2(0, 250f));
-            rbody.velocity = new Vector2(x * speed, rbody.velocity.y);
+            rbody.AddForce(new Vector2(0, jumpForce));
+            //rbody.velocity = new Vector2(x * speed, rbody.velocity.y);
             hasJumped = true;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Grounded")
+        {
+            hasJumped = false;
+            anim.SetBool("has jumped", false);
+        }
+
     }
 
 }
