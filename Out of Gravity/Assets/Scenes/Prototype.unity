@@ -15604,7 +15604,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748867470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -457.5, y: -258.4, z: 0}
+  m_LocalPosition: {x: -457.5, y: -269.73007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1203157110}
@@ -15612,8 +15612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -457.5, y: -258.4}
-  m_SizeDelta: {x: 219, y: 121.2}
+  m_AnchoredPosition: {x: -457.5, y: -269.73007}
+  m_SizeDelta: {x: 219, y: 98.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748867472
 MonoBehaviour:
@@ -15653,9 +15653,7 @@ MonoBehaviour:
 
     Space: Jump
 
-    G: Change Gravity
-
-    V Pressed: Move faster'
+    G Pressed: No Gravity'
 --- !u!222 &1748867473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15696,7 +15694,7 @@ MonoBehaviour:
   speed: 10
   jumpForce: 350
   gravityChanger: {fileID: 2065931984}
-  hasKey: 0
+  numOfKeys: 0
 --- !u!50 &1795105579
 Rigidbody2D:
   serializedVersion: 4
@@ -16899,7 +16897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxChangeTimer: 0.2
-  gravityScale: 9.8
 --- !u!4 &2065931985
 Transform:
   m_ObjectHideFlags: 0

@@ -7,15 +7,15 @@ public class GravityChanger : MonoBehaviour {
     public float maxChangeTimer = 0.2f;
 
     private float changeTimer;
-    private bool gravityOn;
+    private bool hasGravity;
     private bool gravityIsChanging;
-    [SerializeField]private float gravityScale = 9.8f;
+    private float gravityScale = 9.8f;
 
 	// Use this for initialization
 	void Start () {
         Physics2D.gravity = new Vector2(0, -gravityScale);
         changeTimer = 0.2f;
-        gravityOn = true;
+        hasGravity = true;
         gravityIsChanging = false;
     }
 	
@@ -28,19 +28,27 @@ public class GravityChanger : MonoBehaviour {
         } 
 	}
 
-    public void changeGravity()
+    public void gravityOff()
     {
-        if (gravityOn)
+        Physics2D.gravity = new Vector2(0, 0);
+
+        if (hasGravity)
         {
-            Physics2D.gravity = new Vector2(0, 0);
-            gravityOn = false;
+            hasGravity = false;
+            gravityIsChanging = true;
         }
-        else
+        
+    }
+
+    public void gravityOn()
+    {
+        Physics2D.gravity = new Vector2(0, -gravityScale);
+        if (!hasGravity)
         {
-            Physics2D.gravity = new Vector2(0, -gravityScale);
-            gravityOn = true;
+            hasGravity = true;
+            gravityIsChanging = true;
         }
-         gravityIsChanging = true;
+
     }
 
     private void changeGravityOverTime()
@@ -49,8 +57,9 @@ public class GravityChanger : MonoBehaviour {
 
         if (changeTimer <= 0)
         {
-            if (!gravityOn)
+            if (!hasGravity)
             {
+               
                 gravityScale -= 4;
             }
             else
@@ -73,20 +82,5 @@ public class GravityChanger : MonoBehaviour {
         }
 
         Physics2D.gravity = new Vector2(0, -gravityScale);
-    }
-
-    public bool gravityIsOn()
-    {
-        return gravityOn;
-    }
-
-    public bool checkGravityIsChanging()
-    {
-        return gravityIsChanging;
-    }
-
-    public float getGravityScale()
-    {
-        return gravityScale;
     }
 }

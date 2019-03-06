@@ -10,23 +10,24 @@ public class Player : MonoBehaviour {
     //Prototype Lösung
     public int numOfKeys = 0;
 
-    private bool hasJumped = false;
+    private bool isGrounded = true;
+    
 
     Rigidbody2D rbody;
     Animator anim;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         Move();
-
-	}
+    }
 
     public void addKey()
     {
@@ -42,42 +43,29 @@ public class Player : MonoBehaviour {
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+        float gravityAxis = Input.GetAxisRaw("GravityChange");
+        float jumpAxis = Input.GetAxisRaw("Jump");
+        float speedAxis = Input.GetAxisRaw("SpeedUp");
 
-        if (gravityChanger.gravityIsOn())
+
+        //Schwerkraft ausschalten
+        if (gravityAxis != 0)
         {
-            if (!gravityChanger.checkGravityIsChanging())
-            {
-                gravityOnMovement(x);
-            }        
-        }
-        else
-        {
+            gravityChanger.gravityOff();
             gravityOffMovement(x, y);
         }
-
-        if (Input.GetKeyDown(KeyCode.G))
+        //Schwerkraft wieder einschalten
+        else
         {
-            gravityChanger.changeGravity();
-        }
-
-        if (Input.GetKey(KeyCode.V))
-        {
-            if (speed < 20)
-            {
-                speed *= 2;
-            }
-        }
-
-        else if (Input.GetKeyUp(KeyCode.V))
-        {
-            speed = speed / 2;
+            gravityChanger.gravityOn();
+            gravityOnMovement(x, jumpAxis);
         }
 
     }
 
-    private void gravityOnMovement(float x)
+    private void gravityOnMovement(float x, float jumpAxis)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jumpAxis!=0)
         {
             jump(x);     
         }
@@ -109,12 +97,11 @@ public class Player : MonoBehaviour {
 
     private void jump(float x)
     {
-        if (!hasJumped)
+        if (isGrounded)
         {
             anim.SetBool("has jumped", true);
             rbody.AddForce(new Vector2(0, jumpForce));
-            //rbody.velocity = new Vector2(x * speed, rbody.velocity.y);
-            hasJumped = true;
+            isGrounded = false;
         }
     }
 
@@ -122,10 +109,17 @@ public class Player : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Grounded")
         {
-            hasJumped = false;
+            isGrounded = true;
             anim.SetBool("has jumped", false);
         }
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Grounded")
+        {
+            isGrounded = false;
+        }
     }
 
 }
