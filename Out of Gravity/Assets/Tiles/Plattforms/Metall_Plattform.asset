@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Metall_Plattform
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 3ca08ff22d9768f428eca03064bd8c1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e83d1cacb11b9ee438532e7329e813c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
