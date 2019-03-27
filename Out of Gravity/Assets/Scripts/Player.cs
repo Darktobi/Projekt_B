@@ -5,13 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     //Prototype Solution
-    public int numOfKeys = 0;
+    public List<Key> keys;
 
 
 	// Use this for initialization
 	void Start ()
     {
-
+        keys = new List<Key>();
 	}
 	
 	// Update is called once per frame
@@ -20,13 +20,27 @@ public class Player : MonoBehaviour {
 
     }
 
-    public void addKey()
+    public void addKey(Key key)
     {
-        numOfKeys++;
+        keys.Add(key);
     }
 
-    public void removeKey()
+    public void removeKey(Key key)
     {
-        numOfKeys--;
+        keys.Remove(key);
+    }
+
+    public bool hasRightKey (Key.KeyColor color)
+    {
+       foreach(Key key in keys)
+        {
+            if (key.GetKeyColor() == color)
+            {
+                removeKey(key);
+                return true;
+            }
+        }
+
+        return false;
     }
 }

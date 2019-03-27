@@ -5,6 +5,10 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
 
+    public enum DoorColor { Red, Blue, Green };
+
+    [SerializeField] private DoorColor color;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -16,10 +20,32 @@ public class Door : MonoBehaviour {
 
     private void checkForKey(Player player)
     {
-        if(player.numOfKeys > 0)
+
+        if (player.keys.Count != 0)
         {
-            player.removeKey();
-            Destroy(gameObject);
+            if(color == DoorColor.Red)
+            {
+                if (player.hasRightKey(Key.KeyColor.Red))
+                {
+                    Destroy(gameObject);
+                }
+                
+            }
+            else if (color == DoorColor.Blue)
+            {
+                if(player.hasRightKey(Key.KeyColor.Blue))
+                {
+                    Destroy(gameObject);
+                }
+            }
+            else if (color == DoorColor.Green)
+            {
+                if (player.hasRightKey(Key.KeyColor.Green))
+                {
+                    Destroy(gameObject);
+                }
+            }
+            
         }
 
     }
