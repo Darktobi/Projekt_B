@@ -5,8 +5,12 @@ using UnityEngine;
 public class GravityChanger : MonoBehaviour {
 
     public float maxChangeTimer = 0.2f;
+    public float maxBattery = 3f;
+    public float maxBatteryLoadTimer = 2f;
 
     private float changeTimer;
+    private float battery;
+    private float batteryLoadTimer;
     private bool hasGravity;
     private bool gravityIsChanging;
     private float gravityScale = 9.8f;
@@ -14,7 +18,9 @@ public class GravityChanger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Physics2D.gravity = new Vector2(0, -gravityScale);
-        changeTimer = 0.2f;
+        changeTimer = maxChangeTimer;
+        battery = maxBattery;
+        batteryLoadTimer = maxBatteryLoadTimer;
         hasGravity = true;
         gravityIsChanging = false;
     }
@@ -25,30 +31,51 @@ public class GravityChanger : MonoBehaviour {
         if (gravityIsChanging)
         {
             changeGravityOverTime();
-        } 
+        }
+
+        if (!hasGravity)
+        {
+            battery -= Time.deltaTime;
+            
+            if(battery <= 0)
+            {
+                gravityOn();
+            }
+        }
+
+        else if (battery < maxBattery)
+        {
+            LoadBattery();
+        }  
 	}
 
     public void gravityOff()
     {
-        Physics2D.gravity = new Vector2(0, 0);
-
         if (hasGravity)
         {
+            Physics2D.gravity = new Vector2(0, 0);
             hasGravity = false;
             gravityIsChanging = true;
         }
-        
     }
 
     public void gravityOn()
     {
-        Physics2D.gravity = new Vector2(0, -gravityScale);
         if (!hasGravity)
         {
+            Physics2D.gravity = new Vector2(0, -gravityScale);
             hasGravity = true;
             gravityIsChanging = true;
         }
+    }
 
+    public bool batteryIsEmpty()
+    {
+        if (battery <= 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void changeGravityOverTime()
@@ -82,5 +109,16 @@ public class GravityChanger : MonoBehaviour {
         }
 
         Physics2D.gravity = new Vector2(0, -gravityScale);
+    }
+
+    private void LoadBattery()
+    {
+        batteryLoadTimer -= Time.deltaTime;
+
+        if(batteryLoadTimer <= 0)
+        {
+            battery = maxBattery;
+            batteryLoadTimer = maxBatteryLoadTimer;
+        }
     }
 }

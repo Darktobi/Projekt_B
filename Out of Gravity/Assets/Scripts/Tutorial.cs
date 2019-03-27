@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour {
 
+    
+
 	// Use this for initialization
 	void Start () {
-		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (gameObject.name == "GravityChangerItem")
+        {
+            PlayerMovementControler playerMovement = FindObjectOfType<PlayerMovementControler>();
+            playerMovement.activateGravityChanger();
+            Destroy(gameObject);
+        }
+    }
 }

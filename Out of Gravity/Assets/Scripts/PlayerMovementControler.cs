@@ -8,6 +8,7 @@ public class PlayerMovementControler : MonoBehaviour {
     public float jumpForce = 350f;
     public GravityChanger gravityChanger;
 
+    private bool hasGravityChanger;
     private bool isGrounded = true;
 
     Rigidbody2D rbody;
@@ -17,6 +18,8 @@ public class PlayerMovementControler : MonoBehaviour {
     void Start () {
         rbody = GetComponent<Rigidbody2D>();
         animationControler = GetComponent<PlayerAnimationControler>();
+        //For testing
+        hasGravityChanger = false;
     }
 
 	void FixedUpdate () {
@@ -27,19 +30,33 @@ public class PlayerMovementControler : MonoBehaviour {
         float jumpAxis = Input.GetAxisRaw("Jump");
         float speedAxis = Input.GetAxisRaw("SpeedUp");
 
-
-        //Turn gravity off
-        if (gravityAxis != 0)
+        if (hasGravityChanger)
         {
-            gravityChanger.gravityOff();
-            gravityOffMovement(x, y);
+            //Turn gravity off
+            // TODO: Load Battery only, if button is released
+            if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
+            {
+                gravityChanger.gravityOff();
+                gravityOffMovement(x, y);
+            }
+            //Turn gravity on
+            else
+            {
+                gravityChanger.gravityOn();
+                gravityOnMovement(x, jumpAxis);
+            }
         }
-        //Turn gravity on
         else
         {
             gravityChanger.gravityOn();
             gravityOnMovement(x, jumpAxis);
         }
+
+    }
+
+    public void activateGravityChanger()
+    {
+        hasGravityChanger = true;
     }
 
     private void gravityOnMovement(float x, float jumpAxis)
