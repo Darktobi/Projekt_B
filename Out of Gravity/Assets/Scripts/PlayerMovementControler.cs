@@ -6,20 +6,21 @@ public class PlayerMovementControler : MonoBehaviour {
 
     public float speed = 10;
     public float jumpForce = 350f;
-    public GravityChanger gravityChanger;
+    public PhysicsMaterial2D bounce;
 
-    private bool hasGravityChanger;
     private bool isGrounded = true;
-
-    Rigidbody2D rbody;
-    PlayerAnimationControler animationControler;
+    private Rigidbody2D rbody;
+    private PlayerAnimationControler animationControler;
+    private Player player;
+    private GravityChanger gravityChanger;
 
 
     void Start () {
         rbody = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
         animationControler = GetComponent<PlayerAnimationControler>();
-        //For testing
-        hasGravityChanger = false;
+        gravityChanger = GetComponent<GravityChanger>();
+    //For testing
     }
 
 	void FixedUpdate () {
@@ -30,7 +31,7 @@ public class PlayerMovementControler : MonoBehaviour {
         float jumpAxis = Input.GetAxisRaw("Jump");
         float speedAxis = Input.GetAxisRaw("SpeedUp");
 
-        if (hasGravityChanger)
+        if (player.hasGravityChanger)
         {
             //Turn gravity off
             // TODO: Load Battery only, if button is released
@@ -54,13 +55,9 @@ public class PlayerMovementControler : MonoBehaviour {
 
     }
 
-    public void activateGravityChanger()
-    {
-        hasGravityChanger = true;
-    }
-
     private void gravityOnMovement(float x, float jumpAxis)
     {
+        rbody.sharedMaterial = null;
         if (jumpAxis != 0)
         {
             jump(x);
@@ -86,7 +83,7 @@ public class PlayerMovementControler : MonoBehaviour {
 
     private void gravityOffMovement(float x, float y)
     {
-
+        rbody.sharedMaterial = bounce;
         animationControler.floatingIdle();
 
         Vector2 dir = new Vector2(x * (speed / 2), y * (speed / 2));

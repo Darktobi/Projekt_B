@@ -14,8 +14,8 @@ public class Tutorial : MonoBehaviour {
     {
         if (gameObject.name == "GravityChangerItem")
         {
-            PlayerMovementControler playerMovement = FindObjectOfType<PlayerMovementControler>();
-            playerMovement.activateGravityChanger();
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player.hasGravityChanger = true;
             Destroy(gameObject);
         }
     }

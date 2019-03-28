@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    //Prototype Solution
     public List<Key> keys;
+    public bool hasGravityChanger;
 
 
 	// Use this for initialization
 	void Start ()
     {
         keys = new List<Key>();
+        hasGravityChanger = false;
 	}
 	
 	// Update is called once per frame
@@ -42,5 +43,20 @@ public class Player : MonoBehaviour {
         }
 
         return false;
+    }
+
+    public int getCurrentKey (Key.KeyColor color)
+    {
+        int keyCount = 0;
+
+        foreach(Key key in keys)
+        {
+            if(key.GetKeyColor() == color)
+            {
+                keyCount++;
+            }
+        }
+
+        return keyCount;
     }
 }

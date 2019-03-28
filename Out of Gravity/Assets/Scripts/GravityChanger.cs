@@ -78,6 +78,11 @@ public class GravityChanger : MonoBehaviour {
         return false;
     }
 
+    public float getCurrentBattery()
+    {
+        return battery;
+    }
+
     private void changeGravityOverTime()
     {
         changeTimer -= Time.deltaTime;
