@@ -17,7 +17,7 @@ public class UIHandler : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        gravityChanger = GameObject.FindGameObjectWithTag("Player").GetComponent<GravityChanger>();
+        gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
         batteryText.enabled = false;
         battery.enabled = false;
 	}

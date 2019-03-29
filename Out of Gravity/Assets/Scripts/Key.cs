@@ -5,8 +5,16 @@ using UnityEngine;
 public class Key : MonoBehaviour {
 
     public enum KeyColor {Red, Blue, Green};
+    public AudioClip clip;
 
     [SerializeField]private KeyColor color;
+
+    private AudioControler audioControler;
+
+    private void Start()
+    {
+        audioControler = GameObject.Find("Key").GetComponent<AudioControler>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +22,7 @@ public class Key : MonoBehaviour {
         {
             Player player = collision.gameObject.GetComponent<Player>();
             player.addKey(this);
+            audioControler.playSFX(clip, 1, 0.9f);
             Destroy(gameObject);
         }
     }

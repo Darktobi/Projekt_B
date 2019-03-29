@@ -19,7 +19,7 @@ public class PlayerMovementControler : MonoBehaviour {
         rbody = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
         animationControler = GetComponent<PlayerAnimationControler>();
-        gravityChanger = GetComponent<GravityChanger>();
+        gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
     //For testing
     }
 

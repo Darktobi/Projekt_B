@@ -7,6 +7,7 @@ public class GravityChanger : MonoBehaviour {
     public float maxChangeTimer = 0.2f;
     public float maxBattery = 3f;
     public float maxBatteryLoadTimer = 2f;
+    public AudioClip[] audioClip = new AudioClip[2];
 
     private float changeTimer;
     private float battery;
@@ -14,6 +15,8 @@ public class GravityChanger : MonoBehaviour {
     private bool hasGravity;
     private bool gravityIsChanging;
     private float gravityScale = 9.8f;
+
+    private AudioControler audioControler;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +26,7 @@ public class GravityChanger : MonoBehaviour {
         batteryLoadTimer = maxBatteryLoadTimer;
         hasGravity = true;
         gravityIsChanging = false;
+        audioControler = GetComponent<AudioControler>();
     }
 	
 	// Update is called once per frame
@@ -56,6 +60,10 @@ public class GravityChanger : MonoBehaviour {
             Physics2D.gravity = new Vector2(0, 0);
             hasGravity = false;
             gravityIsChanging = true;
+            audioControler.playSFX(audioClip[0], 0.8f, 1.5f);
+
+
+
         }
     }
 
@@ -66,6 +74,7 @@ public class GravityChanger : MonoBehaviour {
             Physics2D.gravity = new Vector2(0, -gravityScale);
             hasGravity = true;
             gravityIsChanging = true;
+            audioControler.playSFX(audioClip[1], 0.8f, 1.5f);
         }
     }
 

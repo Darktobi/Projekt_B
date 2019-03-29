@@ -7,7 +7,16 @@ public class Door : MonoBehaviour {
 
     public enum DoorColor { Red, Blue, Green };
 
+    public AudioClip audioClip;
+
     [SerializeField] private DoorColor color;
+
+    private AudioControler audioControler;
+
+    private void Start()
+    {
+        audioControler = GameObject.Find("Door").GetComponent<AudioControler>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +24,7 @@ public class Door : MonoBehaviour {
         {
             Player player = collision.gameObject.GetComponent<Player>();
             checkForKey(player);
+            
         }
     }
 
@@ -27,6 +37,7 @@ public class Door : MonoBehaviour {
             {
                 if (player.hasRightKey(Key.KeyColor.Red))
                 {
+                    audioControler.playSFX(audioClip);
                     Destroy(gameObject);
                 }
                 
@@ -35,6 +46,7 @@ public class Door : MonoBehaviour {
             {
                 if(player.hasRightKey(Key.KeyColor.Blue))
                 {
+                    audioControler.playSFX(audioClip);
                     Destroy(gameObject);
                 }
             }
@@ -42,6 +54,7 @@ public class Door : MonoBehaviour {
             {
                 if (player.hasRightKey(Key.KeyColor.Green))
                 {
+                    audioControler.playSFX(audioClip);
                     Destroy(gameObject);
                 }
             }
