@@ -39,6 +39,7 @@ public class GravityChanger : MonoBehaviour {
 
         if (!hasGravity)
         {
+            batteryLoadTimer = maxBatteryLoadTimer;
             battery -= Time.deltaTime;
             
             if(battery <= 0)
@@ -61,9 +62,6 @@ public class GravityChanger : MonoBehaviour {
             hasGravity = false;
             gravityIsChanging = true;
             audioControler.playSFX(audioClip[0], 0.8f, 1.5f);
-
-
-
         }
     }
 
