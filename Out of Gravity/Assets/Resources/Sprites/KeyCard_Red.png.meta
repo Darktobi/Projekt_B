@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 58f55c15a9e503f4bbe1582d5f4a133b
-timeCreated: 1554114691
+guid: b5faa999230696c4a87f1329702b192b
+timeCreated: 1554117580
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: KeyCard_Red_0
+    21300002: KeyCard_Red_1
+    21300004: KeyCard_Red_2
+    21300006: KeyCard_Red_3
+    21300008: KeyCard_Red_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +45,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 2048
+  spritePixelsToUnits: 512
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -94,7 +99,77 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KeyCard_Red_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 123
+        width: 233
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: KeyCard_Red_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 113
+        width: 232
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: KeyCard_Red_2
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 113
+        width: 233
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: KeyCard_Red_3
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 130
+        width: 233
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: KeyCard_Red_4
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 122
+        width: 233
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
