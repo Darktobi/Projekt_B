@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour {
 
-    
-
-	// Use this for initialization
-	void Start () {
-	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.name == "GravityChangerItem")
+
+        //Laufen und Springen erklären
+        if(gameObject.name == "StartTutorial")
         {
+            Debug.Log("Laufen mithilfe der Pfeilstasten Links und Rechts. Springen mithilfe der Space-Taste");
+            Destroy(gameObject);
+        }
+
+        else if (gameObject.name == "GravityTutorial")
+        {
+            Debug.Log("E gedrückt halten für das Ausschalten der Schwerkraft");
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             player.hasGravityChanger = true;
             Destroy(gameObject);

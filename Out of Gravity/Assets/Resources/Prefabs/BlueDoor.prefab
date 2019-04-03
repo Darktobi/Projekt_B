@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdb76f6e5184b546b07ca1720f5cce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neededKeyColor: 1
   audioClip: {fileID: 8300000, guid: 6145ad25fa95a9541adfeee0a3da295e, type: 3}
-  color: 1
 --- !u!212 &212328397440505902
 SpriteRenderer:
   m_ObjectHideFlags: 1

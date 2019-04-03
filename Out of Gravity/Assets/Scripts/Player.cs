@@ -26,18 +26,13 @@ public class Player : MonoBehaviour {
         keys.Add(key);
     }
 
-    public void removeKey(Key key)
-    {
-        keys.Remove(key);
-    }
 
-    public bool hasRightKey (Key.KeyColor color)
+    public bool hasRightKey (Key.KeyColor neededKeyColor)
     {
        foreach(Key key in keys)
         {
-            if (key.GetKeyColor() == color)
+            if (key.GetKeyColor() == neededKeyColor)
             {
-                removeKey(key);
                 return true;
             }
         }

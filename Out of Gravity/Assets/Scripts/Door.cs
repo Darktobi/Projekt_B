@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
-
-    public enum DoorColor { Red, Blue, Green };
-
+    public Key.KeyColor neededKeyColor;
     public AudioClip audioClip;
 
-    [SerializeField] private DoorColor color;
 
     private AudioControler audioControler;
 
@@ -31,34 +28,10 @@ public class Door : MonoBehaviour {
     private void checkForKey(Player player)
     {
 
-        if (player.keys.Count != 0)
+        if (player.hasRightKey(neededKeyColor))
         {
-            if(color == DoorColor.Red)
-            {
-                if (player.hasRightKey(Key.KeyColor.Red))
-                {
-                    audioControler.playSFX(audioClip);
-                    Destroy(gameObject);
-                }
-                
-            }
-            else if (color == DoorColor.Blue)
-            {
-                if(player.hasRightKey(Key.KeyColor.Blue))
-                {
-                    audioControler.playSFX(audioClip);
-                    Destroy(gameObject);
-                }
-            }
-            else if (color == DoorColor.Green)
-            {
-                if (player.hasRightKey(Key.KeyColor.Green))
-                {
-                    audioControler.playSFX(audioClip);
-                    Destroy(gameObject);
-                }
-            }
-            
+          audioControler.playSFX(audioClip);
+          Destroy(gameObject);
         }
 
     }
