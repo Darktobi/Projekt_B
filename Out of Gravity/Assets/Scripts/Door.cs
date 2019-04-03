@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour {
+public abstract class Door : MonoBehaviour {
 
-    public Key.KeyColor neededKeyColor;
     public AudioClip audioClip;
-
-
     private AudioControler audioControler;
 
     private void Start()
@@ -20,20 +17,18 @@ public class Door : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             Player player = collision.gameObject.GetComponent<Player>();
-            checkForKey(player);
-            
+            check(player);
         }
     }
 
-    private void checkForKey(Player player)
+    protected void open()
     {
-
-        if (player.hasRightKey(neededKeyColor))
-        {
-          audioControler.playSFX(audioClip);
-          Destroy(gameObject);
-        }
-
+        audioControler.playSFX(audioClip);
+        Destroy(gameObject);
     }
+
+    public abstract void check(Player player);
+
+
 
 }
