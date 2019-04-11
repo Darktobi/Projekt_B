@@ -53,6 +53,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxChangeTimer: 0.2
+  maxBattery: 3
+  maxBatteryReduce: 5
+  maxBatteryLoadTimer: 2
+  audioClip:
+  - {fileID: 0}
+  - {fileID: 0}
+  gravityArea: {fileID: 1245953837643020, guid: f7f7732ff6fa754409cdc076786f214c,
+    type: 2}
 --- !u!212 &212984865356935456
 SpriteRenderer:
   m_ObjectHideFlags: 1

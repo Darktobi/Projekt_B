@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerMovementControler : MonoBehaviour {
 
-    public float speed = 10;
+    public float maxSpeed = 10;
+    public float speedReduceFactor = 2.5f;
     public float jumpForce = 350f;
     public PhysicsMaterial2D bounce;
-    public GameObject gravityArea;
 
+    private float speed;
     private bool isGrounded = true;
     private bool hasGravityArea = false;
     private Rigidbody2D rbody;
@@ -18,6 +19,7 @@ public class PlayerMovementControler : MonoBehaviour {
 
 
     void Start () {
+        speed = maxSpeed;
         rbody = GetComponent<Rigidbody2D>();
         player = GetComponent<Player>();
         animationControler = GetComponent<PlayerAnimationControler>();
@@ -39,29 +41,29 @@ public class PlayerMovementControler : MonoBehaviour {
             // TODO: Load Battery only, if button is released
             if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
             {
-                setGravityArea();
-                gravityChanger.gravityOff();
-                gravityOffMovement(x, y);
+                gravityChanger.turnOn();
+                gravityChangerOnMovement(x, y);
             }
             //Turn gravity on
             else
             {
-                destroyGravityArea();
-                gravityChanger.gravityOn();
-                gravityOnMovement(x, jumpAxis);
+                gravityChanger.turnOff();
+                gravityChangerOffMovement(x, jumpAxis);
             }
         }
         else
         {
-            gravityChanger.gravityOn();
-            gravityOnMovement(x, jumpAxis);
+            gravityChanger.turnOff();
+            gravityChangerOffMovement(x, jumpAxis);
         }
 
     }
 
-    private void gravityOnMovement(float x, float jumpAxis)
+    private void gravityChangerOffMovement(float x, float jumpAxis)
     {
         rbody.sharedMaterial = null;
+        speed = maxSpeed;
+
         if (jumpAxis != 0)
         {
             jump(x);
@@ -83,15 +85,27 @@ public class PlayerMovementControler : MonoBehaviour {
         }
 
         rbody.velocity = dir;
+
     }
 
-    private void gravityOffMovement(float x, float y)
+    private void gravityChangerOnMovement(float x, float y)
     {
         rbody.sharedMaterial = bounce;
         animationControler.floatingIdle();
+        speed = maxSpeed / speedReduceFactor;
 
-        Vector2 dir = new Vector2(x * (speed / 2), y * (speed / 2));
-        rbody.AddForce(dir);
+        Vector2 dir = new Vector2(x * speed, y * speed);
+
+        if (x != 0 || y != 0)
+        {
+            gravityChanger.Moving(true);
+            rbody.AddForce(dir);
+        }
+        else
+        {
+            gravityChanger.Moving(false);
+            rbody.AddForce(-rbody.velocity * 1.5f);
+        }
 
         if (rbody.velocity.magnitude > speed)
         {
@@ -108,22 +122,6 @@ public class PlayerMovementControler : MonoBehaviour {
             isGrounded = false;
         }
     }
-
-    private void setGravityArea()
-    {
-        if (!hasGravityArea)
-        {
-            Instantiate(gravityArea, this.gameObject.transform.position, Quaternion.identity);
-            hasGravityArea = true;
-        }
-    }
-
-    private void destroyGravityArea()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("GravityArea"));
-        hasGravityArea = false;
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

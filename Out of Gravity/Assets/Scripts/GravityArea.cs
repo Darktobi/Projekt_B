@@ -22,16 +22,19 @@ public class GravityArea : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        collision.GetComponent<Rigidbody2D>().gravityScale = 0f;
+
         if (collision.gameObject.tag == "GravityObject")
         {
             middle = (transform.position - collision.transform.position).normalized;
             collision.GetComponent<Rigidbody2D>().velocity = middle * magnetism;
+            
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        collision.GetComponent<Rigidbody2D>().gravityScale = 1f;
 
         if (collision.gameObject.tag == "GravityObject")
         {

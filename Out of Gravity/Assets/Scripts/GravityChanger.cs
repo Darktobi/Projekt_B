@@ -5,73 +5,75 @@ using UnityEngine;
 public class GravityChanger : MonoBehaviour {
 
     public float maxChangeTimer = 0.2f;
-    public float maxBattery = 3f;
+    public float maxBattery = 5f;
+    public float maxBatteryReduce = 5;
     public float maxBatteryLoadTimer = 2f;
     public AudioClip[] audioClip = new AudioClip[2];
+    public GameObject gravityArea;
 
-    private float changeTimer;
     private float battery;
     private float batteryLoadTimer;
-    private bool hasGravity;
-    private bool gravityIsChanging;
-    private float gravityScale = 9.8f;
+    private float batteryReduce;
+    private bool isOn;
+    private bool isMoving;
+    private bool hasGravityArea;
 
     private AudioControler audioControler;
 
 	// Use this for initialization
 	void Start () {
-        Physics2D.gravity = new Vector2(0, -gravityScale);
-        changeTimer = maxChangeTimer;
         battery = maxBattery;
         batteryLoadTimer = maxBatteryLoadTimer;
-        hasGravity = true;
-        gravityIsChanging = false;
+        isOn = false;
+        isMoving = false;
         audioControler = GetComponent<AudioControler>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (gravityIsChanging)
+        if (isMoving)
         {
-            changeGravityOverTime();
+            batteryReduce = 1;
+        }
+        else
+        {
+            batteryReduce = maxBatteryReduce;
         }
 
-        if (!hasGravity)
+        if (isOn)
         {
+            setGravityArea();
             batteryLoadTimer = maxBatteryLoadTimer;
-            battery -= Time.deltaTime;
+            battery -= Time.deltaTime/ batteryReduce;
             
             if(battery <= 0)
             {
-                gravityOn();
+                turnOff();
             }
         }
 
         else if (battery < maxBattery)
         {
+            destroyGravityArea();
             LoadBattery();
         }  
 	}
 
-    public void gravityOff()
+    public void turnOn()
     {
-        if (hasGravity)
+        if (!isOn)
         {
-            Physics2D.gravity = new Vector2(0, 0);
-            hasGravity = false;
-            gravityIsChanging = true;
+            isOn = true;
             audioControler.playSFX(audioClip[0], 0.8f, 1.5f);
         }
     }
 
-    public void gravityOn()
+    public void turnOff()
     {
-        if (!hasGravity)
+        if (isOn)
         {
-            Physics2D.gravity = new Vector2(0, -gravityScale);
-            hasGravity = true;
-            gravityIsChanging = true;
+            isOn = false;
             audioControler.playSFX(audioClip[1], 0.8f, 1.5f);
         }
     }
@@ -90,37 +92,9 @@ public class GravityChanger : MonoBehaviour {
         return battery;
     }
 
-    private void changeGravityOverTime()
+    public void Moving(bool isMoving)
     {
-        changeTimer -= Time.deltaTime;
-
-        if (changeTimer <= 0)
-        {
-            if (!hasGravity)
-            {
-               
-                gravityScale -= 4;
-            }
-            else
-            {
-                gravityScale += 4;
-            }
-
-            changeTimer = maxChangeTimer;
-        }
-
-        if (gravityScale < 0)
-        {
-            gravityScale = 0;
-            gravityIsChanging = false;
-        }
-        else if (gravityScale > 9.8f)
-        {
-            gravityIsChanging = false;
-            gravityScale = 9.8f;
-        }
-
-        Physics2D.gravity = new Vector2(0, -gravityScale);
+        this.isMoving = isMoving;
     }
 
     private void LoadBattery()
@@ -132,5 +106,20 @@ public class GravityChanger : MonoBehaviour {
             battery = maxBattery;
             batteryLoadTimer = maxBatteryLoadTimer;
         }
+    }
+
+    private void setGravityArea()
+    {
+        if (!hasGravityArea)
+        {
+            Instantiate(gravityArea);
+            hasGravityArea = true;
+        }
+    }
+
+    private void destroyGravityArea()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("GravityArea"));
+        hasGravityArea = false;
     }
 }
