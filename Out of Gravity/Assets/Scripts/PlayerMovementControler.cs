@@ -7,8 +7,10 @@ public class PlayerMovementControler : MonoBehaviour {
     public float speed = 10;
     public float jumpForce = 350f;
     public PhysicsMaterial2D bounce;
+    public GameObject gravityArea;
 
     private bool isGrounded = true;
+    private bool hasGravityArea = false;
     private Rigidbody2D rbody;
     private PlayerAnimationControler animationControler;
     private Player player;
@@ -37,12 +39,14 @@ public class PlayerMovementControler : MonoBehaviour {
             // TODO: Load Battery only, if button is released
             if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
             {
+                setGravityArea();
                 gravityChanger.gravityOff();
                 gravityOffMovement(x, y);
             }
             //Turn gravity on
             else
             {
+                destroyGravityArea();
                 gravityChanger.gravityOn();
                 gravityOnMovement(x, jumpAxis);
             }
@@ -103,6 +107,21 @@ public class PlayerMovementControler : MonoBehaviour {
             rbody.AddForce(new Vector2(0, jumpForce));
             isGrounded = false;
         }
+    }
+
+    private void setGravityArea()
+    {
+        if (!hasGravityArea)
+        {
+            Instantiate(gravityArea, this.gameObject.transform.position, Quaternion.identity);
+            hasGravityArea = true;
+        }
+    }
+
+    private void destroyGravityArea()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("GravityArea"));
+        hasGravityArea = false;
     }
 
 
