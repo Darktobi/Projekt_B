@@ -10,14 +10,17 @@ public class UIHandler : MonoBehaviour {
     public Text greenKeys;
     public Text batteryText;
     public Text battery;
+    public AudioClip batteryWarning;
 
     private Player player;
     private GravityChanger gravityChanger;
+    private AudioControler audioControler;
 
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
+        audioControler = GetComponent<AudioControler>();
         batteryText.enabled = false;
         battery.enabled = false;
 	}
@@ -44,9 +47,23 @@ public class UIHandler : MonoBehaviour {
 
             float batteryInPercent = Mathf.Round((gravityChanger.getCurrentBattery() / gravityChanger.maxBattery) * 100);
 
-            if (batteryInPercent < 0)
+            if(batteryInPercent <= 10)
             {
-                batteryInPercent = 0;
+                
+                if (batteryInPercent <= 0)
+                {
+                    audioControler.stop();
+                    batteryInPercent = 0;
+                    
+                }
+                else
+                {
+                    audioControler.plaxSFXFull(batteryWarning, 0.5f, 1);
+                }
+            }
+            else
+            {
+                audioControler.stop();
             }
 
             battery.text = batteryInPercent.ToString() + " % ";

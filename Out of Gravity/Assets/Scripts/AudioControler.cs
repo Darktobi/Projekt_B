@@ -44,6 +44,31 @@ public class AudioControler : MonoBehaviour {
         SFX.PlayOneShot(clip);
     }
 
+    public void plaxSFXFull(AudioClip clip)
+    {
+        if (!SFX.isPlaying)
+        {
+            resetSFX();
+            SFX.PlayOneShot(clip);
+        }
+    }
+
+    public void plaxSFXFull(AudioClip clip, float volume, float pitch)
+    {
+        if (!SFX.isPlaying)
+        {
+            resetSFX();
+            SFX.volume = volume;
+            SFX.pitch = pitch;
+            SFX.PlayOneShot(clip);
+        }
+    }
+
+    public void stop()
+    {
+        SFX.Stop();
+    }
+
 
     private void resetSFX()
     {
