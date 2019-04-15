@@ -10,6 +10,7 @@ public class UIHandler : MonoBehaviour {
     public Text greenKeys;
     public Text batteryText;
     public Text battery;
+    public Text frames;
     public AudioClip batteryWarning;
 
     private Player player;
@@ -27,9 +28,16 @@ public class UIHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        showFramerate();
         showKeys();
         showBattery();
 	}
+
+    private void showFramerate()
+    {
+        frames.text = Mathf.Round(1 / Time.smoothDeltaTime).ToString();
+        
+    }
 
     private void showKeys()
     {
