@@ -180,7 +180,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fa9a477a1d7551c4da338b75d33f0c47, type: 2}
+  m_Motion: {fileID: 7400000, guid: 365e9f537966b2547af2d9646d9a6ff0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -193,7 +193,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walking
-  m_Speed: 1
+  m_Speed: 0.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101282468837803816}
@@ -207,7 +207,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6ef578870865e0f43bf3c2ec70e500f9, type: 2}
+  m_Motion: {fileID: 7400000, guid: 22c109dabe64b6a468eb22bc224be06a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -220,7 +220,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: jumping
-  m_Speed: 1.5
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101929165138585616}
@@ -233,7 +233,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 05dec0d21c509494a8e4e74dd1fae9cc, type: 2}
+  m_Motion: {fileID: 7400000, guid: 365e9f537966b2547af2d9646d9a6ff0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

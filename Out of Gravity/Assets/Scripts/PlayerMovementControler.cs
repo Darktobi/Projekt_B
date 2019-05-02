@@ -35,6 +35,15 @@ public class PlayerMovementControler : MonoBehaviour {
         float jumpAxis = Input.GetAxisRaw("Jump");
         float speedAxis = Input.GetAxisRaw("SpeedUp");
 
+        if (x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+
         if (player.hasGravityChanger)
         {
             //Turn gravity off
@@ -76,6 +85,7 @@ public class PlayerMovementControler : MonoBehaviour {
         {
             if (dir.x != 0)
             {
+               
                 animationControler.walkingRight();
             }
             else
