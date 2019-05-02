@@ -244,11 +244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxChangeTimer: 0.2
-  maxBattery: 3
+  maxBattery: 5
   maxBatteryReduce: 5
   maxBatteryLoadTimer: 2
   audioClip:
-  - {fileID: 8300000, guid: 553da88ba397f824dac38f750ddebe03, type: 3}
+  - {fileID: 8300000, guid: 8c3306d1b14559245a8b87233d822af4, type: 3}
   - {fileID: 8300000, guid: 8591abd84af16c14192cebd3b6611240, type: 3}
   gravityArea: {fileID: 1245953837643020, guid: f7f7732ff6fa754409cdc076786f214c,
     type: 2}

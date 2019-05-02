@@ -51,7 +51,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1568846792956386}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c77897e41364564f9b423d8b43071f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 539ee4d0b69b27349b164e72d1d0855e, type: 3}
+  clip: {fileID: 8300000, guid: 31914944c81eb2c4288e2ea2348a258b, type: 3}
   color: 0
 --- !u!212 &212182640993745648
 SpriteRenderer:
