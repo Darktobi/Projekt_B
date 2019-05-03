@@ -143,16 +143,16 @@ public class PlayerMovementControler : MonoBehaviour {
         if (flip && !spriteRenderer.flipX)
         {
             spriteRenderer.flipX = true;
-            colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
+            colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y); 
             //prevent stucking in walls
-            rbody.position = new Vector2(rbody.position.x - 0.15f, rbody.position.y);
+            rbody.position = new Vector2(rbody.position.x - 0.5f, rbody.position.y);
         }
         else if (!flip && spriteRenderer.flipX)
         {
             spriteRenderer.flipX = false;
             colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
             //prevent stucking in walls
-            rbody.position = new Vector2(rbody.position.x + 0.15f, rbody.position.y);
+            rbody.position = new Vector2(rbody.position.x + 0.5f, rbody.position.y);
         }
     }
 
