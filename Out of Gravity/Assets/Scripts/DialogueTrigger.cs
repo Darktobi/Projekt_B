@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour {
 
-
 	public Dialogue dialogue;
-
-
 
 	void OnTriggerEnter2D(Collider2D other) 
 	{
@@ -19,11 +16,8 @@ public class DialogueTrigger : MonoBehaviour {
 		}
 	}
 
-
 	void OnTriggerExit2D(Collider2D other2)
 	{
-		
-
 		if (other2.tag == "Player") {
 			FindObjectOfType<DialogueManager> ().EndDialogue (); 
 		}
