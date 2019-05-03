@@ -13,6 +13,8 @@ public class PlayerMovementControler : MonoBehaviour {
     private bool isGrounded = true;
     private bool hasGravityArea = false;
     private Rigidbody2D rbody;
+    private BoxCollider2D colider;
+    private SpriteRenderer spriteRenderer;
     private PlayerAnimationControler animationControler;
     private Player player;
     private GravityChanger gravityChanger;
@@ -21,6 +23,8 @@ public class PlayerMovementControler : MonoBehaviour {
     void Start () {
         speed = maxSpeed;
         rbody = GetComponent<Rigidbody2D>();
+        colider = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player = GetComponent<Player>();
         animationControler = GetComponent<PlayerAnimationControler>();
         gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
@@ -37,11 +41,11 @@ public class PlayerMovementControler : MonoBehaviour {
 
         if (x < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            flipSprite(true); 
         }
         else if (x > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            flipSprite(false);
         }
 
         if (player.hasGravityChanger)
@@ -130,6 +134,25 @@ public class PlayerMovementControler : MonoBehaviour {
             animationControler.jump();
             rbody.AddForce(new Vector2(0, jumpForce));
             isGrounded = false;
+        }
+    }
+
+    private void flipSprite(bool flip)
+    {
+
+        if (flip && !spriteRenderer.flipX)
+        {
+            spriteRenderer.flipX = true;
+            colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
+            //prevent stucking in walls
+            rbody.position = new Vector2(rbody.position.x - 0.15f, rbody.position.y);
+        }
+        else if (!flip && spriteRenderer.flipX)
+        {
+            spriteRenderer.flipX = false;
+            colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
+            //prevent stucking in walls
+            rbody.position = new Vector2(rbody.position.x + 0.15f, rbody.position.y);
         }
     }
 
