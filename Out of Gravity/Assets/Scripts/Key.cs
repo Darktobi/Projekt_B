@@ -13,7 +13,7 @@ public class Key : MonoBehaviour {
 
     private void Start()
     {
-        audioControler = GameObject.Find("Key").GetComponent<AudioControler>();
+        audioControler = GameObject.Find("Keys").GetComponent<AudioControler>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,7 +9,7 @@ public abstract class Door : MonoBehaviour {
 
     private void Start()
     {
-        audioControler = GameObject.Find("Door").GetComponent<AudioControler>();
+        audioControler = GameObject.Find("Doors").GetComponent<AudioControler>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
