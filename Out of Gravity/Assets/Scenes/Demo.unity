@@ -16284,62 +16284,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 212497194017829704, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a06ccd431b9ad3d4d888902c61b4fff0,
-        type: 3}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.08836609
-      objectReference: {fileID: 0}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.31895983
-      objectReference: {fileID: 0}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.05539489
-      objectReference: {fileID: 0}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.1579411
-      objectReference: {fileID: 0}
-    - target: {fileID: 212497194017829704, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114921987598698138, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: bounce
-      value: 
-      objectReference: {fileID: 6200000, guid: 8a35e1adb6f97c04fa8007ed53e42131, type: 2}
-    - target: {fileID: 61832227940814978, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: m_AutoTiling
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114921987598698138, guid: bdf601ac76dadd1438a7c68c4b68afe0,
-        type: 2}
-      propertyPath: jumpForce
-      value: 450
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
   m_IsPrefabParent: 0
