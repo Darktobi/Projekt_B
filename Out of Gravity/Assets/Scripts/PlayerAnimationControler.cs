@@ -14,15 +14,10 @@ public class PlayerAnimationControler : MonoBehaviour {
     public void idle()
     {
         anim.SetBool("is walking", false);
-        
+        anim.SetBool("has jumped", false);
     }
 
-    public void walkingRight()
-    {
-        anim.SetBool("is walking", true);
-    }
-
-    public void walkingLeft()
+    public void walking()
     {
         anim.SetBool("is walking", true);
     }
@@ -33,13 +28,7 @@ public class PlayerAnimationControler : MonoBehaviour {
         anim.SetBool("is walking", false);
     }
 
-    public void floatingRight()
-    {
-        //Change this when there is an Animation for no gravity
-        anim.SetBool("is walking", false);
-    }
-
-    public void floatingLeft()
+    public void floating()
     {
         //Change this when there is an Animation for no gravity
         anim.SetBool("is walking", false);
@@ -49,10 +38,4 @@ public class PlayerAnimationControler : MonoBehaviour {
     {
         anim.SetBool("has jumped", true);
     }
-
-    public void jumpIdle()
-    {
-        anim.SetBool("has jumped", false);
-    }
-
 }

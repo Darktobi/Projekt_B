@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705527557258234}
   - component: {fileID: 68508359150261188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StairCollider_ShallowLeft
   m_TagString: Grounded
   m_Icon: {fileID: 0}

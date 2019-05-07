@@ -280,7 +280,12 @@ MonoBehaviour:
   maxSpeed: 10
   speedReduceFactor: 2.5
   jumpForce: 450
+  groundedDistToGround: 1.3
+  stairsDistToGround: 1.5
   bounce: {fileID: 6200000, guid: 8a35e1adb6f97c04fa8007ed53e42131, type: 2}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &114989915092122084
 MonoBehaviour:
   m_ObjectHideFlags: 1

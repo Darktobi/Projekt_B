@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4896117201979706}
   - component: {fileID: 68607307537062994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StairCollider_Right
-  m_TagString: Grounded
+  m_TagString: Stairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1705183047805058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4908051, y: 4.327616, z: -0.095348306}
+  m_LocalPosition: {x: -2.45, y: 9.16, z: -0.095348306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

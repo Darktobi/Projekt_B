@@ -7,11 +7,14 @@ public class PlayerMovementControler : MonoBehaviour {
     public float maxSpeed = 10;
     public float speedReduceFactor = 2.5f;
     public float jumpForce = 350f;
+    public float groundedDistToGround;
+    public float stairsDistToGround;
     public PhysicsMaterial2D bounce;
+    public LayerMask groundLayer;
 
     private float speed;
-    private bool isGrounded = true;
     private bool hasGravityArea = false;
+    private float distToGround;
     private Rigidbody2D rbody;
     private BoxCollider2D colider;
     private SpriteRenderer spriteRenderer;
@@ -22,13 +25,13 @@ public class PlayerMovementControler : MonoBehaviour {
 
     void Start () {
         speed = maxSpeed;
+        distToGround = groundedDistToGround;
         rbody = GetComponent<Rigidbody2D>();
         colider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         player = GetComponent<Player>();
         animationControler = GetComponent<PlayerAnimationControler>();
         gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
-    //For testing
     }
 
 	void FixedUpdate () {
@@ -66,6 +69,7 @@ public class PlayerMovementControler : MonoBehaviour {
         }
         else
         {
+            
             gravityChanger.turnOff();
             gravityChangerOffMovement(x, jumpAxis);
         }
@@ -77,29 +81,23 @@ public class PlayerMovementControler : MonoBehaviour {
         rbody.sharedMaterial = null;
         speed = maxSpeed;
 
-        if (jumpAxis != 0)
+        Vector2 dir = new Vector2(x * speed, rbody.velocity.y);
+
+        //Movement for Jumping
+        if (jumpAxis != 0 && isGrounded())
         {
             jump(x);
         }
-
-        Vector2 dir = new Vector2(x * speed, rbody.velocity.y);
-
-        //Animation for walking only, when player is on ground
-        if (isGrounded)
+        //Movement if Not jumping
+        else if(isGrounded())
         {
+            animationControler.idle();
             if (dir.x != 0)
             {
-               
-                animationControler.walkingRight();
-            }
-            else
-            {
-                animationControler.idle();
+                animationControler.walking();
             }
         }
-
         rbody.velocity = dir;
-
     }
 
     private void gravityChangerOnMovement(float x, float y)
@@ -129,12 +127,8 @@ public class PlayerMovementControler : MonoBehaviour {
 
     private void jump(float x)
     {
-        if (isGrounded)
-        {
             animationControler.jump();
-            rbody.AddForce(new Vector2(0, jumpForce));
-            isGrounded = false;
-        }
+            rbody.AddForce(new Vector2(0, jumpForce));  
     }
 
     private void flipSprite(bool flip)
@@ -156,20 +150,34 @@ public class PlayerMovementControler : MonoBehaviour {
         }
     }
 
+    private bool isGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distToGround, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Grounded")
+        if (collision.gameObject.tag == "Stairs")
         {
-            isGrounded = true;
-            animationControler.jumpIdle();
+            distToGround = stairsDistToGround;
+            Debug.Log("Test");
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Grounded")
+        if (collision.gameObject.tag == "Stairs")
         {
-            isGrounded = false;
+            distToGround = groundedDistToGround;
         }
     }
 }
