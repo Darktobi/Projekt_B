@@ -2674,12 +2674,12 @@ Prefab:
     - target: {fileID: 224329738713954538, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.440735
+      value: -4.440674
       objectReference: {fileID: 0}
     - target: {fileID: 224329738713954538, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.45874
+      value: -7.4587708
       objectReference: {fileID: 0}
     - target: {fileID: 224329738713954538, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
         type: 2}
@@ -2761,66 +2761,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1565106235}
     - target: {fileID: 114449288393684196, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1994213557}
+    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1565106235}
     - target: {fileID: 1470721578323046, guid: 11cbab1f8315a6c4bb5e75102fac1a10, type: 2}
       propertyPath: m_Name
       value: Dialog
-      objectReference: {fileID: 0}
-    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1674118903
-      objectReference: {fileID: 0}
-    - target: {fileID: 114011801379946162, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b7dca35de76529346a41478f19577411,
-        type: 3}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114578570947249766, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114578570947249766, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1fe594d1fe72da24389224f8c60e8828,
-        type: 3}
-    - target: {fileID: 114177944056239670, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11cbab1f8315a6c4bb5e75102fac1a10, type: 2}

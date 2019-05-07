@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217515807121912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.93, y: 0, z: 0}
-  m_LocalScale: {x: 7.01, y: 5.02, z: 1}
+  m_LocalPosition: {x: -1.07, y: -0.93, z: 0}
+  m_LocalScale: {x: 7.0099998, y: 5.02, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,9 +82,7 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "Dies hier ist ein Beispieltext, der eingeblendet werden kann, sobald der Spieler
-      einen Computer ber\xFChrt. "
-    - test
+    - Springen mit SPACE!
 --- !u!114 &114996436507120154
 MonoBehaviour:
   m_ObjectHideFlags: 1

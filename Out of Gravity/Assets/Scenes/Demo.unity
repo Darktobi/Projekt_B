@@ -435,7 +435,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90461675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -346, y: 228, z: 0}
+  m_LocalPosition: {x: -319.3, y: 228, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1381664200}
@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -346, y: 228}
+  m_AnchoredPosition: {x: -319.3, y: 228}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90461677
@@ -15775,11 +15775,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1273499688}
     m_Modifications:
-    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
-        type: 2}
-      propertyPath: dialogue.sentences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.07
@@ -15811,20 +15806,6 @@ Prefab:
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
-        type: 2}
-      propertyPath: dialogue.sentences.Array.data[0]
-      value: Springten mit SPACE!
-      objectReference: {fileID: 0}
-    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
-        type: 2}
-      propertyPath: dialogue.sentences.Array.data[1]
-      value: test
-      objectReference: {fileID: 0}
-    - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 7.0099998
       objectReference: {fileID: 0}
     - target: {fileID: 1217515807121912, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_Name
@@ -16073,66 +16054,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 477774796}
     - target: {fileID: 114449288393684196, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1785587257}
+    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 477774796}
     - target: {fileID: 1470721578323046, guid: 11cbab1f8315a6c4bb5e75102fac1a10, type: 2}
       propertyPath: m_Name
       value: Dialog
-      objectReference: {fileID: 0}
-    - target: {fileID: 223029955412897088, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1674118903
-      objectReference: {fileID: 0}
-    - target: {fileID: 114011801379946162, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b7dca35de76529346a41478f19577411,
-        type: 3}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114952401011649614, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114578570947249766, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114578570947249766, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1fe594d1fe72da24389224f8c60e8828,
-        type: 3}
-    - target: {fileID: 114177944056239670, guid: 11cbab1f8315a6c4bb5e75102fac1a10,
-        type: 2}
-      propertyPath: m_Text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11cbab1f8315a6c4bb5e75102fac1a10, type: 2}
