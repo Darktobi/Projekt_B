@@ -8,6 +8,9 @@ TagManager:
   - GravityArea
   - GravityObject
   - Stairs
+  - Grounded
+  - Ladder
+  - Lever-Door
   layers:
   - Default
   - TransparentFX

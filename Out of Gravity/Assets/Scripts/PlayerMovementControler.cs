@@ -14,6 +14,7 @@ public class PlayerMovementControler : MonoBehaviour {
 
     private float speed;
     private bool hasGravityArea = false;
+    private bool isUsingLadder = false;
     private float distToGround;
     private Rigidbody2D rbody;
     private BoxCollider2D colider;
@@ -64,24 +65,29 @@ public class PlayerMovementControler : MonoBehaviour {
             else
             {
                 gravityChanger.turnOff();
-                gravityChangerOffMovement(x, jumpAxis);
+                gravityChangerOffMovement(x, y, jumpAxis);
             }
         }
         else
         {
             
             gravityChanger.turnOff();
-            gravityChangerOffMovement(x, jumpAxis);
+            gravityChangerOffMovement(x, y, jumpAxis);
         }
 
     }
 
-    private void gravityChangerOffMovement(float x, float jumpAxis)
+    private void gravityChangerOffMovement(float x, float y, float jumpAxis)
     {
         rbody.sharedMaterial = null;
         speed = maxSpeed;
 
         Vector2 dir = new Vector2(x * speed, rbody.velocity.y);
+
+        if (isUsingLadder)
+        {
+            dir = new Vector2(x * speed, y * speed);
+        }
 
         //Movement for Jumping
         if (jumpAxis != 0 && isGrounded())
@@ -169,7 +175,6 @@ public class PlayerMovementControler : MonoBehaviour {
         if (collision.gameObject.tag == "Stairs")
         {
             distToGround = stairsDistToGround;
-            Debug.Log("Test");
         }
     }
 
@@ -178,6 +183,22 @@ public class PlayerMovementControler : MonoBehaviour {
         if (collision.gameObject.tag == "Stairs")
         {
             distToGround = groundedDistToGround;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Ladder")
+        {
+            isUsingLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            isUsingLadder = false;
         }
     }
 }
