@@ -15,5 +15,10 @@ public class MainMenue : MonoBehaviour {
         {
             SceneManager.LoadScene("Demo");
         }
+
+        else if (sceneName == "Level1")
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 }
