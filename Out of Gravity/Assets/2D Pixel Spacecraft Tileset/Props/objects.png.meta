@@ -22,14 +22,17 @@ TextureImporter:
     21300030: powerup_green
     21300032: explosion_big_0
     21300034: explosion_big_1
-  serializedVersion: 2
+  externalObjects: {}
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -37,25 +40,24 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: 0
     aniso: 16
     mipBias: -1
-    wrapMode: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -63,12 +65,56 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: explosion_0
+    - serializedVersion: 2
+      name: explosion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -79,7 +125,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosion_1
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosion_1
       rect:
         serializedVersion: 2
         x: 16
@@ -90,7 +139,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosion_2
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosion_2
       rect:
         serializedVersion: 2
         x: 32
@@ -101,7 +153,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosion_3
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosion_3
       rect:
         serializedVersion: 2
         x: 48
@@ -112,7 +167,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: smoke_0
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smoke_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,7 +181,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: smoke_1
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smoke_1
       rect:
         serializedVersion: 2
         x: 16
@@ -134,7 +195,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: smoke_2
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smoke_2
       rect:
         serializedVersion: 2
         x: 32
@@ -145,7 +209,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: smoke_3
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smoke_3
       rect:
         serializedVersion: 2
         x: 48
@@ -156,7 +223,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: scrap_0
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrap_0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,7 +237,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: scrap_1
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrap_1
       rect:
         serializedVersion: 2
         x: 16
@@ -178,7 +251,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: scrap_22
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrap_22
       rect:
         serializedVersion: 2
         x: 32
@@ -189,7 +265,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: scrap_3
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrap_3
       rect:
         serializedVersion: 2
         x: 48
@@ -200,7 +279,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: scrap_4
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrap_4
       rect:
         serializedVersion: 2
         x: 0
@@ -211,7 +293,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: powerup_red
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: powerup_red
       rect:
         serializedVersion: 2
         x: 16
@@ -222,7 +307,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: powerup_blue
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: powerup_blue
       rect:
         serializedVersion: 2
         x: 32
@@ -233,7 +321,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: powerup_green
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: powerup_green
       rect:
         serializedVersion: 2
         x: 48
@@ -244,7 +335,10 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: explosion_big_0
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosion_big_0
       rect:
         serializedVersion: 2
         x: 64
@@ -254,15 +348,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 16}
-        - {x: -16, y: 15}
-        - {x: -16, y: -16}
-        - {x: 13, y: -16}
-        - {x: 16, y: -15}
-        - {x: 16, y: 12}
-        - {x: 11, y: 16}
-    - name: explosion_big_1
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: explosion_big_1
       rect:
         serializedVersion: 2
         x: 64
@@ -272,15 +362,11 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 16}
-        - {x: -16, y: 15}
-        - {x: -16, y: -16}
-        - {x: 13, y: -16}
-        - {x: 16, y: -15}
-        - {x: 16, y: 12}
-        - {x: 11, y: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
     outline: []
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
