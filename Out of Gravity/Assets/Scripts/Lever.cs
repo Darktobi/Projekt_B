@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lever : MonoBehaviour {
 
     private static bool leverStatus = false;
+    private static bool canOpen = false;
     private static GameObject[] gameobjects;
 
     public AudioClip audioClip;
@@ -20,6 +21,16 @@ public class Lever : MonoBehaviour {
     private void Update()
     {
         checkDoors();
+
+        if( canOpen)
+        {
+             if (Input.GetKeyDown(KeyCode.F))
+        {
+            changeStatus();
+            audioControler.playSFX(audioClip);
+        }
+        }
+       
     }
 
     private void checkDoors()
@@ -46,17 +57,15 @@ public class Lever : MonoBehaviour {
         {
             leverStatus = true;
         }
+        canOpen = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.F)){
-                changeStatus();
-                audioControler.playSFX(audioClip);
-            }
-            
+
+            canOpen = true;
         }
     }
 }

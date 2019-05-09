@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494526456168794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.38, y: -3.4, z: 0}
+  m_LocalPosition: {x: -7.15, y: 2.45, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4450036007811390}
@@ -277,9 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558630e8fee5e5344899e1460480a4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 5
   speedReduceFactor: 2.5
-  jumpForce: 450
+  jumpForce: 300
   groundedDistToGround: 1.3
   stairsDistToGround: 1.5
   bounce: {fileID: 6200000, guid: 8a35e1adb6f97c04fa8007ed53e42131, type: 2}
