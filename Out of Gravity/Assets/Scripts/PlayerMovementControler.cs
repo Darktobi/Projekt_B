@@ -13,6 +13,7 @@ public class PlayerMovementControler : MonoBehaviour {
     public LayerMask groundLayer;
 
     private float speed;
+    private bool movementIsInterrupt = false;
     private bool hasGravityArea = false;
     private bool isUsingLadder = false;
     private float distToGround;
@@ -43,38 +44,47 @@ public class PlayerMovementControler : MonoBehaviour {
         float jumpAxis = Input.GetAxisRaw("Jump");
         float speedAxis = Input.GetAxisRaw("SpeedUp");
 
-        if (x < 0)
+        if (!movementIsInterrupt)
         {
-            flipSprite(true); 
-        }
-        else if (x > 0)
-        {
-            flipSprite(false);
-        }
-
-        if (player.hasGravityChanger)
-        {
-            //Turn gravity off
-            // TODO: Load Battery only, if button is released
-            if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
+            if (x < 0)
             {
-                gravityChanger.turnOn();
-                gravityChangerOnMovement(x, y);
+                flipSprite(true);
             }
-            //Turn gravity on
+            else if (x > 0)
+            {
+                flipSprite(false);
+            }
+
+            if (player.hasGravityChanger)
+            {
+                //Turn gravity off
+                // TODO: Load Battery only, if button is released
+                if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
+                {
+                    gravityChanger.turnOn();
+                    gravityChangerOnMovement(x, y);
+                }
+                //Turn gravity on
+                else
+                {
+                    gravityChanger.turnOff();
+                    gravityChangerOffMovement(x, y, jumpAxis);
+                }
+            }
             else
             {
+
                 gravityChanger.turnOff();
                 gravityChangerOffMovement(x, y, jumpAxis);
             }
         }
-        else
-        {
-            
-            gravityChanger.turnOff();
-            gravityChangerOffMovement(x, y, jumpAxis);
-        }
+    }
 
+    public void interruptMovement(bool movementIsInterrupt)
+    {
+        this.movementIsInterrupt = movementIsInterrupt;
+        rbody.velocity = new Vector2(0, 0);
+        animationControler.idle();
     }
 
     private void gravityChangerOffMovement(float x, float y, float jumpAxis)
