@@ -5,6 +5,7 @@ using UnityEngine;
 public class Elevator : MonoBehaviour {
 
     public Vector2 teleportPoint;
+    public bool isRepaired = false;
 
     private bool canUse = false;
 
@@ -17,13 +18,13 @@ public class Elevator : MonoBehaviour {
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        audioControler = GameObject.Find("Doors").GetComponent<AudioControler>();
+        audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
 
     }
 
     // Update is called once per frame
     void Update () {
-        if (canUse)
+        if (isRepaired && canUse)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {

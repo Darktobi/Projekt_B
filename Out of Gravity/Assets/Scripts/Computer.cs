@@ -18,6 +18,6 @@ public class Computer : MonoBehaviour {
 
     private void showText()
     {
-        Debug.Log(text);
+       
     }
 }

@@ -13,7 +13,7 @@ public class Lever : MonoBehaviour {
 
     private void Start()
     {
-        audioControler = GameObject.Find("Doors").GetComponent<AudioControler>();
+        audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
         gameobjects = GameObject.FindGameObjectsWithTag("Lever-Door");
 
     }

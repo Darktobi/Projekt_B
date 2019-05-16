@@ -8,11 +8,14 @@ public class Player : MonoBehaviour {
     public List<DoorCode> doorCodes;
     public bool hasGravityChanger;
 
+    private int reactorPieces;
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
     {
         keys = new List<Key>();
+        reactorPieces = 0;
         hasGravityChanger = false;
 	}
 	
@@ -78,5 +81,20 @@ public class Player : MonoBehaviour {
         }
 
         return keyCount;
+    }
+
+    public int getRepairPiece()
+    {
+        return reactorPieces;
+    }
+
+    public void addRepairPiece()
+    {
+        reactorPieces++;
+    }
+
+    public void removeRepairPieces(int numberToRemove)
+    {
+        reactorPieces -= numberToRemove;
     }
 }

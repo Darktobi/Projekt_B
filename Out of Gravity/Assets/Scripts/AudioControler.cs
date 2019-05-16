@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AudioControler : MonoBehaviour {
 
-    public bool destroyableObject;
-
     AudioSource backgroundMusic;
     AudioSource SFX;
 
@@ -16,14 +14,7 @@ public class AudioControler : MonoBehaviour {
     {
         backgroundMusic = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
 
-        if (destroyableObject)
-        {
-            SFX = GameObject.Find("SFX_Controler").GetComponent<AudioSource>();
-        }
-        else
-        {
-            SFX = GetComponent<AudioSource>();
-        }
+        SFX = GetComponent<AudioSource>();
 
     }
 
