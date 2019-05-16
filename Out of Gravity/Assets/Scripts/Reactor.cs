@@ -5,6 +5,7 @@ using UnityEngine;
 public class Reactor : MonoBehaviour {
 
     public GameObject objectToRepair;
+    public GameObject particle;
 
     [SerializeField]
     private int neededPieces;
@@ -37,6 +38,7 @@ public class Reactor : MonoBehaviour {
         //Hard coded for Eleveator, TODO: Code for every object in Future
         if(player.getRepairPiece() >= neededPieces)
         {
+            Instantiate(particle);
             objectToRepair.GetComponent<Elevator>().isRepaired = true;
             audioControler.playSFX(audioClip);
             player.removeRepairPieces(neededPieces);

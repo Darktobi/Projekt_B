@@ -12,6 +12,7 @@ TagManager:
   - Ladder
   - Lever-Door
   - ReactorPiece
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
