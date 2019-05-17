@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public List<Key> keys;
     public List<DoorCode> doorCodes;
     public bool hasGravityChanger;
+    public bool isInVaccum;
 
     private int reactorPieces;
 
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour {
         keys = new List<Key>();
         reactorPieces = 0;
         hasGravityChanger = false;
+        isInVaccum = false;
 	}
 	
 	// Update is called once per frame

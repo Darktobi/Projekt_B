@@ -13,6 +13,7 @@ TagManager:
   - Lever-Door
   - ReactorPiece
   - FxTemporaire
+  - Vacuum
   layers:
   - Default
   - TransparentFX

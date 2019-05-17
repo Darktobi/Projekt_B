@@ -55,27 +55,33 @@ public class PlayerMovementControler : MonoBehaviour {
                 flipSprite(false);
             }
 
-            if (player.hasGravityChanger)
+            if (!player.isInVaccum)
             {
-                //Turn gravity off
-                // TODO: Load Battery only, if button is released
-                if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
+                if (player.hasGravityChanger)
                 {
-                    gravityChanger.turnOn();
-                    gravityChangerOnMovement(x, y);
+                    //Turn gravity off
+                    // TODO: Load Battery only, if button is released
+                    if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
+                    {
+                        gravityChanger.turnOn();
+                        gravityChangerOnMovement(x, y);
+                    }
+                    //Turn gravity on
+                    else
+                    {
+                        gravityChanger.turnOff();
+                        gravityChangerOffMovement(x, y, jumpAxis);
+                    }
                 }
-                //Turn gravity on
                 else
                 {
                     gravityChanger.turnOff();
                     gravityChangerOffMovement(x, y, jumpAxis);
                 }
             }
-            else
+           else
             {
-
-                gravityChanger.turnOff();
-                gravityChangerOffMovement(x, y, jumpAxis);
+                vacuumMovement(x, y, jumpAxis);
             }
         }
     }
@@ -134,6 +140,22 @@ public class PlayerMovementControler : MonoBehaviour {
             gravityChanger.Moving(false);
             rbody.AddForce(-rbody.velocity * 1.5f);
         }
+
+        if (rbody.velocity.magnitude > speed)
+        {
+            rbody.velocity = rbody.velocity.normalized * speed;
+        }
+    }
+
+    private void vacuumMovement(float x, float y, float jumpAxis)
+    {
+        rbody.sharedMaterial = bounce;
+        animationControler.floatingIdle();
+        speed = maxSpeed / speedReduceFactor;
+
+        Vector2 dir = new Vector2(x * speed, y * speed);
+
+        rbody.AddForce(dir);
 
         if (rbody.velocity.magnitude > speed)
         {

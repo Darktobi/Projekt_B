@@ -24,10 +24,11 @@ public class Lever : MonoBehaviour {
 
         if( canOpen)
         {
-             if (Input.GetKeyDown(KeyCode.F))
+          if (Input.GetKeyDown(KeyCode.F))
         {
             changeStatus();
-            audioControler.playSFX(audioClip);
+            StartCoroutine(changeStatus());
+            
         }
         }
        
@@ -47,15 +48,24 @@ public class Lever : MonoBehaviour {
         }
     }
 
-    private void changeStatus()
+    IEnumerator changeStatus()
     {
+        audioControler.playSFX(audioClip);
+        yield return new WaitForSeconds(0.5f);
+
         if (leverStatus)
         {
+            audioControler.playSFX(GameObject.FindGameObjectWithTag("Vacuum").GetComponent<Vacuum>().audioClip);
+            yield return new WaitForSeconds(1.2f);
             leverStatus = false;
+            GameObject.FindGameObjectWithTag("Vacuum").transform.localScale = new Vector2(1, 1);
         }
         else
         {
+            audioControler.playSFX(GameObject.FindGameObjectWithTag("Vacuum").GetComponent<Vacuum>().audioClip);
+            yield return new WaitForSeconds(1.2f);
             leverStatus = true;
+            GameObject.FindGameObjectWithTag("Vacuum").transform.localScale = new Vector2(2.5f, 1);
         }
         canOpen = false;
     }
