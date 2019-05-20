@@ -10,6 +10,7 @@ public class Elevator : MonoBehaviour {
     private bool canUse = false;
 
     private GameObject player;
+    private PlayerMovementControler playerMovement;
 
     public AudioClip audioClip;
     private AudioControler audioControler;
@@ -18,6 +19,7 @@ public class Elevator : MonoBehaviour {
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovementControler>();
         audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
 
     }
@@ -26,7 +28,7 @@ public class Elevator : MonoBehaviour {
     void Update () {
         if (isRepaired && canUse)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetAxisRaw("Interact") != 0)
             {
                 canUse = false;
                 StartCoroutine(teleport());
@@ -37,10 +39,10 @@ public class Elevator : MonoBehaviour {
     IEnumerator teleport()
     {
         audioControler.playSFX(audioClip);
-        player.GetComponent<PlayerMovementControler>().interruptMovement(true);
+        playerMovement.interruptMovement(true);
         yield return new WaitForSeconds(0.7f);
         player.transform.position = teleportPoint;
-        player.GetComponent<PlayerMovementControler>().interruptMovement(false);
+        playerMovement.interruptMovement(false);
         
     }
 

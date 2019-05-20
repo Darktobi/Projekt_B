@@ -26,7 +26,7 @@ public class Reactor : MonoBehaviour {
 	void Update () {
         if (canRepair)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetAxisRaw("Interact") != 0)
             {
                 repair();
             }
