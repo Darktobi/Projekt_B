@@ -794,11 +794,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4542183990262984, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 42.2
+      value: 18.88
       objectReference: {fileID: 0}
     - target: {fileID: 4542183990262984, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.7
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4542183990262984, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -833,6 +833,16 @@ Prefab:
         type: 2}
       propertyPath: fallSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448149777047428, guid: bdf601ac76dadd1438a7c68c4b68afe0,
+        type: 2}
+      propertyPath: maxBattery
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448149777047428, guid: bdf601ac76dadd1438a7c68c4b68afe0,
+        type: 2}
+      propertyPath: maxBatteryLoadTimer
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}

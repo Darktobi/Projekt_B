@@ -36,7 +36,6 @@ public class UIHandler : MonoBehaviour {
     private void showFramerate()
     {
         frames.text = Mathf.Round(1 / Time.smoothDeltaTime).ToString();
-        
     }
 
     private void showKeys()
@@ -55,28 +54,26 @@ public class UIHandler : MonoBehaviour {
 
             float batteryInPercent = Mathf.Round((gravityChanger.getCurrentBattery() / gravityChanger.maxBattery) * 100);
 
-            if(batteryInPercent <= 10)
+            if(batteryInPercent <= 15)
             {
-                
-                if (batteryInPercent <= 0)
+                if (gravityChanger.isBatteryLoading())
                 {
-                    audioControler.stop();
-                    batteryInPercent = 0;
-                    
+                    audioControler.stopSFX();   
                 }
                 else
                 {
-                    audioControler.plaxSFXFull(batteryWarning, 0.5f, 1);
+                    if (!audioControler.SFXisPlaying())
+                    {
+                        audioControler.playSFX(batteryWarning, 0.5f, 1);
+                    }
                 }
             }
             else
             {
-                audioControler.stop();
+                audioControler.stopSFX();
             }
 
             battery.text = batteryInPercent.ToString() + " % ";
         }
-
-     
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravityChanger : MonoBehaviour {
 
     public float maxChangeTimer = 0.2f;
-    public float maxBattery = 5f;
+    public float maxBattery = 10f;
     public float maxBatteryReduce = 5;
     public float maxBatteryLoadTimer = 2f;
     public AudioClip[] audioClip = new AudioClip[2];
@@ -16,6 +16,7 @@ public class GravityChanger : MonoBehaviour {
     private float batteryReduce;
     private bool isOn;
     private bool isMoving;
+    private bool isLoading;
     private bool hasGravityArea;
 
     private AudioControler audioControler;
@@ -26,6 +27,7 @@ public class GravityChanger : MonoBehaviour {
         batteryLoadTimer = maxBatteryLoadTimer;
         isOn = false;
         isMoving = false;
+        isLoading = false;
         audioControler = GetComponent<AudioControler>();
     }
 	
@@ -43,6 +45,7 @@ public class GravityChanger : MonoBehaviour {
 
         if (isOn)
         {
+            
             setGravityArea();
             batteryLoadTimer = maxBatteryLoadTimer;
             battery -= Time.deltaTime/ batteryReduce;
@@ -55,7 +58,6 @@ public class GravityChanger : MonoBehaviour {
 
         else if (battery < maxBattery)
         {
-            destroyGravityArea();
             LoadBattery();
         }  
 	}
@@ -65,7 +67,8 @@ public class GravityChanger : MonoBehaviour {
         if (!isOn)
         {
             isOn = true;
-            audioControler.playSFX(audioClip[0], 0.8f, 1.5f);
+            isLoading = false;
+            audioControler.playSFXLoop(audioClip[0], 0.8f, 1.5f);
         }
     }
 
@@ -74,6 +77,8 @@ public class GravityChanger : MonoBehaviour {
         if (isOn)
         {
             isOn = false;
+            isLoading = true;
+            destroyGravityArea();
             audioControler.playSFX(audioClip[1], 0.8f, 1.5f);
         }
     }
@@ -85,6 +90,11 @@ public class GravityChanger : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public bool isBatteryLoading()
+    {
+        return isLoading;
     }
 
     public float getCurrentBattery()
@@ -103,9 +113,8 @@ public class GravityChanger : MonoBehaviour {
 
         if(batteryLoadTimer <= 0)
         {
-            battery = maxBattery;
-            batteryLoadTimer = maxBatteryLoadTimer;
-        }
+            battery += Time.deltaTime;
+        } 
     }
 
     private void setGravityArea()
