@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovementControler : MonoBehaviour {
 
     public float maxSpeed = 10;
+    public float fallSpeed = 20;
     public float speedReduceFactor = 2.5f;
     public float jumpForce = 350f;
     public float groundedDistToGround;
@@ -119,6 +120,11 @@ public class PlayerMovementControler : MonoBehaviour {
                 animationControler.walking();
             }
         }
+        else if (!isGrounded())
+        {
+            fall();
+        }
+
         rbody.velocity = dir;
     }
 
@@ -167,6 +173,16 @@ public class PlayerMovementControler : MonoBehaviour {
     {
             animationControler.jump();
             rbody.AddForce(new Vector2(0, jumpForce));  
+    }
+
+    private void fall()
+    {
+        rbody.AddForce(new Vector2(0, -fallSpeed));
+
+        if (rbody.velocity.magnitude > fallSpeed)
+        {
+            rbody.velocity = rbody.velocity.normalized * fallSpeed;
+        }
     }
 
     private void flipSprite(bool flip)
