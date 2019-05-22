@@ -17,6 +17,7 @@ public class PlayerMovementControler : MonoBehaviour {
     private bool movementIsInterrupt = false;
     private bool hasGravityArea = false;
     private bool isUsingLadder = false;
+    private bool hasJumped = false;
     private float distToGround;
     private Rigidbody2D rbody;
     private BoxCollider2D colider;
@@ -66,6 +67,7 @@ public class PlayerMovementControler : MonoBehaviour {
                     {
                         gravityChanger.turnOn();
                         gravityChangerOnMovement(x, y);
+                        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     }
                     //Turn gravity on
                     else
@@ -85,13 +87,16 @@ public class PlayerMovementControler : MonoBehaviour {
                 vacuumMovement(x, y, jumpAxis);
             }
         }
+        else
+        {
+            animationControler.idle();
+        }
     }
 
     public void interruptMovement(bool movementIsInterrupt)
     {
         this.movementIsInterrupt = movementIsInterrupt;
         rbody.velocity = new Vector2(0, 0);
-        animationControler.idle();
     }
 
     private void gravityChangerOffMovement(float x, float y, float jumpAxis)
@@ -103,7 +108,21 @@ public class PlayerMovementControler : MonoBehaviour {
 
         if (isUsingLadder)
         {
-            dir = new Vector2(x * speed, y * speed);
+            animationControler.idle();
+
+            if (hasJumped)
+            {
+                rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+            else if (y != 0)
+            {
+                rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                dir = new Vector2(x * speed, y * speed);
+            }
+            else
+            {
+                rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            }
         }
 
         //Movement for Jumping
@@ -172,7 +191,8 @@ public class PlayerMovementControler : MonoBehaviour {
     private void jump(float x)
     {
             animationControler.jump();
-            rbody.AddForce(new Vector2(0, jumpForce));  
+            rbody.AddForce(new Vector2(0, jumpForce));
+            hasJumped = true;
     }
 
     private void fall()
@@ -212,6 +232,7 @@ public class PlayerMovementControler : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distToGround, groundLayer);
         if (hit.collider != null)
         {
+            hasJumped = false;
             return true;
         }
 
@@ -246,6 +267,7 @@ public class PlayerMovementControler : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Ladder")
         {
+            rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             isUsingLadder = false;
         }
     }
