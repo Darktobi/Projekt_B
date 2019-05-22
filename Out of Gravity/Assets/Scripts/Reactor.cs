@@ -9,17 +9,22 @@ public class Reactor : MonoBehaviour {
 
     [SerializeField]
     private int neededPieces;
+    [SerializeField]
+    private float maxRepairTimer;
+    private float repairTimer;
 
     private bool canRepair = false;
     public AudioClip audioClip;
     private AudioControler audioControler;
 
     private Player player;
+    private PlayerMovementControler playerMovement;
 
     // Use this for initialization
     void Start () {
         audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementControler>();
     }
 	
 	// Update is called once per frame
@@ -28,7 +33,14 @@ public class Reactor : MonoBehaviour {
         {
             if (Input.GetAxisRaw("Interact") != 0)
             {
+                repairTimer -= Time.deltaTime;
+                playerMovement.interruptMovement(true);
                 repair();
+            }
+            else
+            {
+                repairTimer = maxRepairTimer;
+                playerMovement.interruptMovement(false);
             }
         }
     }
@@ -38,10 +50,18 @@ public class Reactor : MonoBehaviour {
         //Hard coded for Eleveator, TODO: Code for every object in Future
         if(player.getRepairPiece() >= neededPieces)
         {
-            Instantiate(particle);
-            objectToRepair.GetComponent<Elevator>().isRepaired = true;
-            audioControler.playSFX(audioClip);
-            player.removeRepairPieces(neededPieces);
+            if (!audioControler.SFXisPlaying())
+            {
+                Instantiate(particle);
+                audioControler.playSFX(audioClip);
+            }
+
+            if (repairTimer <= 0)
+            {
+                objectToRepair.GetComponent<Elevator>().isRepaired = true;
+                player.removeRepairPieces(neededPieces);
+                repairTimer = maxRepairTimer;
+            }
         }
 
     }

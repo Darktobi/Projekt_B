@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61389995070245322}
   - component: {fileID: 114063740535050880}
   - component: {fileID: 95467691965206404}
+  - component: {fileID: 61945762507990346}
   m_Layer: 0
   m_Name: RedDoor
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802599944745870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.53, y: -2.204984, z: 0.6505235}
+  m_LocalPosition: {x: 42.088554, y: -2.741497, z: 0.627086}
   m_LocalScale: {x: 3, y: 3, z: 1.0432116}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,6 +69,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34254432, y: 0.9925977}
   m_EdgeRadius: 0
+--- !u!61 &61945762507990346
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802599944745870}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.38222197, y: -0.16028678}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30953473, y: 0.67942643}
+  m_EdgeRadius: 0
 --- !u!95 &95467691965206404
 Animator:
   serializedVersion: 3
@@ -96,7 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bb2a8d89352fb4c8ac93ee10f5e9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 8e04edf92b58c73438366004f5dcc26f, type: 3}
+  doorOpen: {fileID: 8300000, guid: 8e04edf92b58c73438366004f5dcc26f, type: 3}
+  doorBlock: {fileID: 8300000, guid: 98596bdec0fc7694faa0669dcbe4fc0b, type: 3}
   neededKeyColor: 0
 --- !u!212 &212517045697127798
 SpriteRenderer:
