@@ -10,18 +10,20 @@ public class DialogueManager : MonoBehaviour {
 
 	public Animator animator;
 
+    public bool hasEndedDialogue;
+
 	private Queue<string> sentences;
 
 	// Use this for initialization
 	void Start () {
+        hasEndedDialogue = false;
 		sentences = new Queue<string>();
 	}
 
-	public void StartDialogue (Dialogue dialogue)
+	public void PrepareDialogue (Dialogue dialogue)
 	{
-		animator.SetBool("IsOpen", true);
-
-		nameText.text = dialogue.name;
+        hasEndedDialogue = false;
+        nameText.text = dialogue.name;
 
 		sentences.Clear();
 
@@ -30,13 +32,13 @@ public class DialogueManager : MonoBehaviour {
 			sentences.Enqueue(sentence);
 		}
 
-		DisplayNextSentence();
+		//DisplayNextSentence();
 	}
 
 	public void DisplayNextSentence ()
 	{
-
-		if (sentences.Count == 0)
+        animator.SetBool("IsOpen", true);
+        if (sentences.Count == 0)
 		{
 			EndDialogue();
 			return;
@@ -50,20 +52,26 @@ public class DialogueManager : MonoBehaviour {
 
 	IEnumerator TypeSentence (string sentence)
 	{
-		dialogueText.text = "";
+        dialogueText.text = sentence;
+
+        /*
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
 
 		//Text geschwindigkeit 4 frame pause
-			yield return null;
+			
 
 		}
-	}
+        */
+
+        yield return null;
+    }
 
 	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
-	}
+        hasEndedDialogue = true;
+}
 
 }

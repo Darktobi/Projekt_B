@@ -15,6 +15,7 @@ TagManager:
   - FxTemporaire
   - Vacuum
   - BackgroundMusic
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

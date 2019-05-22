@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4100450093481794}
   - component: {fileID: 212452855943570738}
   - component: {fileID: 61114228316765990}
-  - component: {fileID: 114996436507120154}
   - component: {fileID: 114052897560796992}
   m_Layer: 0
   m_Name: Computer
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217515807121912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -0.93, z: 0}
+  m_LocalPosition: {x: 26.59, y: -8.16, z: 0}
   m_LocalScale: {x: 7.0099998, y: 5.02, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,19 +81,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - Springen mit SPACE!
---- !u!114 &114996436507120154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1217515807121912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 575e8f7755d25b745ad4a3f3cbd3489b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 
+    - "Dies ist ein Beispieltext, der eingeblendet werden kann. jakldshfiweaqhkl\xF6asdhfklashfio\xF6awehlksdh"
+    - Test
 --- !u!212 &212452855943570738
 SpriteRenderer:
   m_ObjectHideFlags: 1
