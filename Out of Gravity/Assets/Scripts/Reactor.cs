@@ -34,7 +34,6 @@ public class Reactor : MonoBehaviour {
             if (Input.GetAxisRaw("Interact") != 0)
             {
                 repairTimer -= Time.deltaTime;
-                playerMovement.interruptMovement(true);
                 repair();
             }
             else
@@ -47,9 +46,10 @@ public class Reactor : MonoBehaviour {
 
     private void repair()
     {
-        //Hard coded for Eleveator, TODO: Code for every object in Future
         if(player.getRepairPiece() >= neededPieces)
         {
+            playerMovement.interruptMovement(true);
+
             if (!audioControler.SFXisPlaying())
             {
                 Instantiate(particle);
@@ -58,8 +58,11 @@ public class Reactor : MonoBehaviour {
 
             if (repairTimer <= 0)
             {
+                //Hard coded for Eleveator, TODO: Code for every object in Future
                 objectToRepair.GetComponent<Elevator>().isRepaired = true;
                 player.removeRepairPieces(neededPieces);
+                canRepair = false;
+                playerMovement.interruptMovement(false);
                 repairTimer = maxRepairTimer;
             }
         }
