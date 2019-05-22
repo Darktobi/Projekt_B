@@ -30,11 +30,11 @@ public class Lever : MonoBehaviour {
         if( canOpen)
         {
           if (Input.GetAxisRaw("Interact") != 0)
-        {
+          {
             changeStatus();
             StartCoroutine(changeStatus());
             
-        }
+          }
         }
        
     }

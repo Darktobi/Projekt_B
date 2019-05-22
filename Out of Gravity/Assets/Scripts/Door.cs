@@ -4,30 +4,31 @@ using UnityEngine;
 
 public abstract class Door : MonoBehaviour {
 
-    public AudioClip audioClip;
+    public AudioClip doorOpen;
+    public AudioClip doorBlock;
     private AudioControler audioControler;
 
-    private void Start()
+    protected void Start()
     {
         audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Player player = collision.gameObject.GetComponent<Player>();
-            check(player);
-        }
-    }
-
     protected void open()
     {
-        audioControler.playSFX(audioClip);
+        audioControler.playSFX(doorOpen);
         Destroy(gameObject);
     }
 
-    public abstract void check(Player player);
+    protected void block()
+    {
+        if (!audioControler.SFXisPlaying())
+        {
+            audioControler.playSFX(doorBlock);
+        }
+        
+    }
+
+    public abstract void check();
 
 
 

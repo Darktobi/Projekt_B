@@ -6,8 +6,9 @@ public class CodeDoor : Door {
 
     public string neededCode;
 
-    public override void check(Player player)
+    public override void check()
     {
+        /*
         if (player.hasRightDoorCode(neededCode))
         {
             open();
@@ -17,7 +18,7 @@ public class CodeDoor : Door {
         {
             Debug.Log("Folgender Code benötigt: " + neededCode);
         }
-
+        */
     }
 }
 
