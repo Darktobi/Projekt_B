@@ -61,15 +61,14 @@ public class PlayerMovementControler : MonoBehaviour {
             {
                 if (player.hasGravityChanger)
                 {
-                    //Turn gravity off
-                    // TODO: Load Battery only, if button is released
+                    //Turn gravity on
                     if (gravityAxis != 0 && !gravityChanger.batteryIsEmpty())
                     {
                         gravityChanger.turnOn();
                         gravityChangerOnMovement(x, y);
                         rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     }
-                    //Turn gravity on
+                    //Turn gravity off
                     else
                     {
                         gravityChanger.turnOff();
@@ -84,6 +83,7 @@ public class PlayerMovementControler : MonoBehaviour {
             }
            else
             {
+                gravityChanger.turnOff();
                 vacuumMovement(x, y, jumpAxis);
             }
         }

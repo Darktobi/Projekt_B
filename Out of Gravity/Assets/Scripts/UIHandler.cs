@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour {
 
-    public Text redKeys;
-    public Text blueKeys;
-    public Text greenKeys;
+    public Image redKey;
+    public Image blueKey;
+    public Image greenKey;
     public Text batteryText;
     public Text battery;
     public Text frames;
@@ -31,7 +31,6 @@ public class UIHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         showFramerate();
-        showKeys();
         showBattery();
 	}
 
@@ -45,16 +44,27 @@ public class UIHandler : MonoBehaviour {
         useInfo.gameObject.SetActive(false);
     }
 
+    public void showKeys(Key.KeyColor color)
+    {
+        if (color == Key.KeyColor.Red)
+        {
+            redKey.gameObject.SetActive(true);
+        }
+
+        if (color == Key.KeyColor.Blue)
+        {
+            blueKey.gameObject.SetActive(true);
+        }
+
+        if (color == Key.KeyColor.Green)
+        {
+            greenKey.gameObject.SetActive(true);
+        }
+    }
+
     private void showFramerate()
     {
         frames.text = Mathf.Round(1 / Time.smoothDeltaTime).ToString();
-    }
-
-    private void showKeys()
-    {
-        redKeys.text = player.getCurrentKey(Key.KeyColor.Red).ToString();
-        blueKeys.text = player.getCurrentKey(Key.KeyColor.Blue).ToString();
-        greenKeys.text = player.getCurrentKey(Key.KeyColor.Green).ToString();
     }
 
     private void showBattery()

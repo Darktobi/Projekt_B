@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
     public void addKey(Key key)
     {
         keys.Add(key);
+        FindObjectOfType<UIHandler>().showKeys(key.GetKeyColor());
     }
 
     public void addDoorCode(DoorCode doorCode)
@@ -68,21 +69,6 @@ public class Player : MonoBehaviour {
             }
         }
         return false;
-    }
-
-    public int getCurrentKey (Key.KeyColor color)
-    {
-        int keyCount = 0;
-
-        foreach(Key key in keys)
-        {
-            if(key.GetKeyColor() == color)
-            {
-                keyCount++;
-            }
-        }
-
-        return keyCount;
     }
 
     public int getRepairPiece()
