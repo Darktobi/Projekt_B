@@ -19,6 +19,8 @@ public class DialogueTrigger : MonoBehaviour {
     {
         if (canOpenDialog)
         {
+            FindObjectOfType<UIHandler>().showUseInfo();
+
             if (Input.GetAxisRaw("Interact") != 0 && dialogTimer <= 0)
             {
                 dialogueManager.DisplayNextSentence();
@@ -53,8 +55,9 @@ public class DialogueTrigger : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Player") {
             canOpenDialog = false;
-            dialogueManager.EndDialogue (); 
-		}
+            dialogueManager.EndDialogue ();
+            FindObjectOfType<UIHandler>().disableUseInfo();
+        }
 	}
 
 

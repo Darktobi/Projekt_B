@@ -20,6 +20,8 @@ public class KeyDoor : Door {
 
         if (canOpen)
         {
+            FindObjectOfType<UIHandler>().showUseInfo();
+
             if (Input.GetAxisRaw("Interact") != 0)
             {
                 check();
@@ -44,6 +46,7 @@ public class KeyDoor : Door {
         if (collision.gameObject.tag == "Player")
         {
             canOpen = true;
+            
         }
     }
 
@@ -52,6 +55,7 @@ public class KeyDoor : Door {
         if (collision.gameObject.tag == "Player")
         {
             canOpen = false;
+            FindObjectOfType<UIHandler>().disableUseInfo();
         }
     }
 }

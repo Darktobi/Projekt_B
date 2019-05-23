@@ -29,7 +29,9 @@ public class Lever : MonoBehaviour {
 
         if( canOpen)
         {
-          if (Input.GetAxisRaw("Interact") != 0)
+            FindObjectOfType<UIHandler>().showUseInfo();
+
+            if (Input.GetAxisRaw("Interact") != 0)
           {
             changeStatus();
             StartCoroutine(changeStatus());
@@ -91,6 +93,7 @@ public class Lever : MonoBehaviour {
         if(collision.gameObject.tag == "Player")
         {
             canOpen = false;
+            FindObjectOfType<UIHandler>().disableUseInfo();
         }
     }
 }

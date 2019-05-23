@@ -29,8 +29,9 @@ public class Reactor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (canRepair)
+        if (canRepair && player.getRepairPiece() >= neededPieces)
         {
+            FindObjectOfType<UIHandler>().showUseInfo();
             if (Input.GetAxisRaw("Interact") != 0)
             {
                 repairTimer -= Time.deltaTime;
@@ -46,27 +47,23 @@ public class Reactor : MonoBehaviour {
 
     private void repair()
     {
-        if(player.getRepairPiece() >= neededPieces)
-        {
-            playerMovement.interruptMovement(true);
+     
+        playerMovement.interruptMovement(true);
 
-            if (!audioControler.SFXisPlaying())
-            {
-                Instantiate(particle);
-                audioControler.playSFX(audioClip);
+         if (!audioControler.SFXisPlaying())
+          {
+            Instantiate(particle);
+             audioControler.playSFX(audioClip);
+          }
+
+          if (repairTimer <= 0)
+          {
+             objectToRepair.gameObject.SetActive(true);
+             player.removeRepairPieces(neededPieces);
+             playerMovement.interruptMovement(false);
+             repairTimer = maxRepairTimer;
+             FindObjectOfType<UIHandler>().disableUseInfo();
             }
-
-            if (repairTimer <= 0)
-            {
-                //Hard coded for Eleveator, TODO: Code for every object in Future
-                objectToRepair.GetComponent<Elevator>().isRepaired = true;
-                player.removeRepairPieces(neededPieces);
-                canRepair = false;
-                playerMovement.interruptMovement(false);
-                repairTimer = maxRepairTimer;
-            }
-        }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

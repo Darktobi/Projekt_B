@@ -11,6 +11,7 @@ public class UIHandler : MonoBehaviour {
     public Text batteryText;
     public Text battery;
     public Text frames;
+    public Image useInfo;
     public AudioClip batteryWarning;
 
     private Player player;
@@ -24,6 +25,7 @@ public class UIHandler : MonoBehaviour {
         audioControler = GetComponent<AudioControler>();
         batteryText.enabled = false;
         battery.enabled = false;
+        useInfo.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -32,6 +34,16 @@ public class UIHandler : MonoBehaviour {
         showKeys();
         showBattery();
 	}
+
+    public void showUseInfo()
+    {
+        useInfo.gameObject.SetActive(true);
+    }
+
+    public void disableUseInfo()
+    {
+        useInfo.gameObject.SetActive(false);
+    }
 
     private void showFramerate()
     {

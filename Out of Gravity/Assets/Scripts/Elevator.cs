@@ -5,7 +5,6 @@ using UnityEngine;
 public class Elevator : MonoBehaviour {
 
     public Vector2 teleportPoint;
-    public bool isRepaired = false;
 
     private bool canUse = false;
 
@@ -26,8 +25,10 @@ public class Elevator : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (isRepaired && canUse)
+        if (canUse)
         {
+            FindObjectOfType<UIHandler>().showUseInfo();
+
             if (Input.GetAxisRaw("Interact") != 0)
             {
                 canUse = false;
@@ -59,6 +60,7 @@ public class Elevator : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             canUse = false;
+            FindObjectOfType<UIHandler>().disableUseInfo();
         }
     }
 }
