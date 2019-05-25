@@ -24,7 +24,7 @@ MonoBehaviour:
     - {fileID: 21300010, guid: 5d0295550432fca49aed09323e3f7626, type: 3}
     - {fileID: 21300012, guid: 5d0295550432fca49aed09323e3f7626, type: 3}
     - {fileID: 21300014, guid: 5d0295550432fca49aed09323e3f7626, type: 3}
-    m_AnimationSpeed: 6
+    m_AnimationSpeed: 4
     m_PerlinScale: 0.5
     m_RuleTransform: 0
     m_Output: 2

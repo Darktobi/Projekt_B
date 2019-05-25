@@ -21,10 +21,10 @@ public class DialogueTrigger : MonoBehaviour {
         {
             FindObjectOfType<UIHandler>().showUseInfo();
 
-            if (Input.GetAxisRaw("Interact") != 0 && dialogTimer <= 0)
+            if (Input.GetButtonDown("Interact")&& dialogTimer <= 0)
             {
                 dialogueManager.DisplayNextSentence();
-                dialogTimer = 0.5f;
+                dialogTimer = 0.3f;
             }
 
             if (dialogueManager.hasEndedDialogue)
@@ -32,8 +32,6 @@ public class DialogueTrigger : MonoBehaviour {
                 dialogueManager.PrepareDialogue(dialogue);
             }
         }
-
-
 
         if(dialogTimer > 0)
         {
