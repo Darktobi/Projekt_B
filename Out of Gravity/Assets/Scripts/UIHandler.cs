@@ -38,6 +38,7 @@ public class UIHandler : MonoBehaviour {
     public void showUseInfo()
     {
         useInfo.gameObject.SetActive(true);
+        batteryPanel.SetActive(false);
     }
 
     public void disableUseInfo()
