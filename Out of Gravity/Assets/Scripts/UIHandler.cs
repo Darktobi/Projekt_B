@@ -18,6 +18,8 @@ public class UIHandler : MonoBehaviour {
     private GravityChanger gravityChanger;
     private AudioControler audioControler;
 
+    private bool hideBattery;
+
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -25,7 +27,8 @@ public class UIHandler : MonoBehaviour {
         audioControler = GetComponent<AudioControler>();
         batteryPanel.SetActive(false);
         useInfo.gameObject.SetActive(false);
-	}
+        hideBattery = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,12 +41,13 @@ public class UIHandler : MonoBehaviour {
     public void showUseInfo()
     {
         useInfo.gameObject.SetActive(true);
-        batteryPanel.SetActive(false);
+        hideBattery = true;
     }
 
     public void disableUseInfo()
     {
         useInfo.gameObject.SetActive(false);
+        hideBattery = false;
     }
 
     public void showKeys(Key.KeyColor color)
@@ -76,7 +80,7 @@ public class UIHandler : MonoBehaviour {
 
             float batteryInPercent = Mathf.Round((gravityChanger.getCurrentBattery() / gravityChanger.maxBattery) * 100);
 
-            if(batteryInPercent < 100)
+            if(batteryInPercent < 100 && !hideBattery)
             {
                 batteryPanel.SetActive(true);
                 changeBatteryColor(batteryInPercent);
