@@ -8,8 +8,8 @@ public class UIHandler : MonoBehaviour {
     public Image redKey;
     public Image blueKey;
     public Image greenKey;
-    public Text batteryText;
-    public Text battery;
+    public Image battery;
+    public GameObject batteryPanel;
     public Text frames;
     public Image useInfo;
     public AudioClip batteryWarning;
@@ -23,8 +23,7 @@ public class UIHandler : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gravityChanger = GameObject.Find("GravityChanger").GetComponent<GravityChanger>();
         audioControler = GetComponent<AudioControler>();
-        batteryText.enabled = false;
-        battery.enabled = false;
+        batteryPanel.SetActive(false);
         useInfo.gameObject.SetActive(false);
 	}
 	
@@ -32,6 +31,8 @@ public class UIHandler : MonoBehaviour {
 	void Update () {
         showFramerate();
         showBattery();
+
+        //batteryTest.fillAmount -= 1.0f / 30 * Time.deltaTime;
 	}
 
     public void showUseInfo()
@@ -71,10 +72,20 @@ public class UIHandler : MonoBehaviour {
     {
         if (player.hasGravityChanger)
         {
-            batteryText.enabled = true;
-            battery.enabled = true;
 
             float batteryInPercent = Mathf.Round((gravityChanger.getCurrentBattery() / gravityChanger.maxBattery) * 100);
+
+            if(batteryInPercent < 100)
+            {
+                batteryPanel.SetActive(true);
+                changeBatteryColor(batteryInPercent);
+            }
+            else
+            {
+                batteryPanel.SetActive(false);
+            }
+
+            battery.fillAmount = batteryInPercent/100;
 
             if(batteryInPercent <= 15)
             {
@@ -95,7 +106,22 @@ public class UIHandler : MonoBehaviour {
                 audioControler.stopSFX();
             }
 
-            battery.text = batteryInPercent.ToString() + " % ";
+        }
+    }
+
+    private void changeBatteryColor(float batteryLoad)
+    {
+        if(batteryLoad > 60)
+        {
+            battery.color = Color.green;
+        }
+        else if(batteryLoad > 30)
+        {
+            battery.color = Color.yellow;
+        }
+        else
+        {
+            battery.color = Color.red;
         }
     }
 }
