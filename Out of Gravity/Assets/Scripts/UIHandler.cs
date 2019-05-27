@@ -11,7 +11,7 @@ public class UIHandler : MonoBehaviour {
     public Image battery;
     public GameObject batteryPanel;
     public Text frames;
-    public Image useInfo;
+    public GameObject useInfo;
     public AudioClip batteryWarning;
 
     private Player player;
@@ -48,6 +48,12 @@ public class UIHandler : MonoBehaviour {
     {
         useInfo.gameObject.SetActive(false);
         hideBattery = false;
+    }
+
+    public void flipPlayerUI()
+    {
+        useInfo.transform.localPosition = new Vector2(useInfo.transform.localPosition.x * -1, useInfo.transform.localPosition.y);
+        batteryPanel.transform.localPosition = new Vector2(batteryPanel.transform.localPosition.x * -1, batteryPanel.transform.localPosition.y);
     }
 
     public void showKeys(Key.KeyColor color)

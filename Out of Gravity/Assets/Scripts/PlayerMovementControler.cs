@@ -214,6 +214,7 @@ public class PlayerMovementControler : MonoBehaviour {
             colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
             //prevent stucking in walls
             rbody.position = new Vector2(rbody.position.x - 0.5f, rbody.position.y);
+            FindObjectOfType<UIHandler>().flipPlayerUI();
         }
         else if (!flip && spriteRenderer.flipX)
         {
@@ -221,6 +222,7 @@ public class PlayerMovementControler : MonoBehaviour {
             colider.offset = new Vector2(colider.offset.x * -1, colider.offset.y);
             //prevent stucking in walls
             rbody.position = new Vector2(rbody.position.x + 0.5f, rbody.position.y);
+            FindObjectOfType<UIHandler>().flipPlayerUI();
         }
     }
 
