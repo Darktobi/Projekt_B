@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour {
     public Canvas canvasPause;
-
+    public GameObject button;
+    public GameObject exitButton;
     private bool isPaused;
     // Use this for initialization
     void Start () {
@@ -16,6 +18,8 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Pause"))
         {
+
+
             if (isPaused)
             {
                 GoOnFunktions();
@@ -23,10 +27,9 @@ public class PauseMenu : MonoBehaviour {
             else
             {
                 Pause();
-                canvasPause.gameObject.SetActive(true);
             }
-
         }
+        
     }
 
     public void Pause()
@@ -35,6 +38,8 @@ public class PauseMenu : MonoBehaviour {
         Cursor.visible = true;
         Time.timeScale = 0;
         isPaused = true;
+        canvasPause.gameObject.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(button);
     }
 
     public void GoOnFunktions()
@@ -42,6 +47,7 @@ public class PauseMenu : MonoBehaviour {
         canvasPause.gameObject.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
+        EventSystem.current.SetSelectedGameObject(null);
     }
     public void Quit()
     {
@@ -52,8 +58,8 @@ public class PauseMenu : MonoBehaviour {
 #endif
     }
 
-    public void To_Main_Menu()
+    public void LoadStartMenu()
     {
-        SceneManager.LoadScene("Hauptmenu");
+        SceneManager.LoadScene("Start");
     }
 }
