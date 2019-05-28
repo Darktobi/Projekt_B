@@ -13,8 +13,10 @@ public class Reactor : MonoBehaviour {
     private float maxRepairTimer;
     private float repairTimer;
 
-    private bool canRepair = false;
+    private bool canUse = false;
+    private bool isRepaired = false;
     public AudioClip audioClip;
+    public AudioClip NoUse;
     private AudioControler audioControler;
 
     private Player player;
@@ -29,25 +31,43 @@ public class Reactor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (canRepair && player.getRepairPiece() >= neededPieces)
+
+        if (!isRepaired && canUse)
         {
             FindObjectOfType<UIHandler>().showUseInfo();
-            if (Input.GetAxisRaw("Interact") != 0)
+
+            if (player.getRepairPiece() >= neededPieces)
             {
-                repairTimer -= Time.deltaTime;
-                repair();
+                if (Input.GetAxisRaw("Interact") != 0)
+                {
+                    repairTimer -= Time.deltaTime;
+                    repair();
+                }
+                else
+                {
+                    repairTimer = maxRepairTimer;
+                    playerMovement.interruptMovement(false);
+                    FindObjectOfType<UIHandler>().disableRepairBar();
+                }
             }
-            else
+
+            else if (Input.GetAxisRaw("Interact") != 0)
             {
-                repairTimer = maxRepairTimer;
-                playerMovement.interruptMovement(false);
+                
+                if (!audioControler.SFXisPlaying())
+                {
+                    audioControler.playSFX(NoUse);
+                }
             }
         }
     }
+       
 
     private void repair()
     {
-     
+        FindObjectOfType<UIHandler>().disableUseInfo();
+        FindObjectOfType<UIHandler>().showRepairBar(maxRepairTimer, repairTimer);
+
         playerMovement.interruptMovement(true);
 
          if (!audioControler.SFXisPlaying())
@@ -62,7 +82,9 @@ public class Reactor : MonoBehaviour {
              player.removeRepairPieces(neededPieces);
              playerMovement.interruptMovement(false);
              repairTimer = maxRepairTimer;
+             isRepaired = true;
              FindObjectOfType<UIHandler>().disableUseInfo();
+             FindObjectOfType<UIHandler>().disableRepairBar();
             }
     }
 
@@ -70,7 +92,7 @@ public class Reactor : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            canRepair = true;
+            canUse = true;
         }
     }
 
@@ -78,7 +100,8 @@ public class Reactor : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            canRepair = false;
+            canUse = false;
+            FindObjectOfType<UIHandler>().disableUseInfo();
         }
     }
 }

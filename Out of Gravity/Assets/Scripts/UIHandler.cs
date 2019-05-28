@@ -9,7 +9,9 @@ public class UIHandler : MonoBehaviour {
     public Image blueKey;
     public Image greenKey;
     public Image battery;
+    public Image repair;
     public GameObject batteryPanel;
+    public GameObject repairPanel;
     public Text frames;
     public GameObject useInfo;
     public AudioClip batteryWarning;
@@ -27,6 +29,7 @@ public class UIHandler : MonoBehaviour {
         audioControler = GetComponent<AudioControler>();
         batteryPanel.SetActive(false);
         useInfo.gameObject.SetActive(false);
+        repairPanel.gameObject.SetActive(false);
         hideBattery = false;
     }
 	
@@ -54,6 +57,7 @@ public class UIHandler : MonoBehaviour {
     {
         useInfo.transform.localPosition = new Vector2(useInfo.transform.localPosition.x * -1, useInfo.transform.localPosition.y);
         batteryPanel.transform.localPosition = new Vector2(batteryPanel.transform.localPosition.x * -1, batteryPanel.transform.localPosition.y);
+        repairPanel.transform.localPosition = new Vector2(repairPanel.transform.localPosition.x * -1, repairPanel.transform.localPosition.y);
     }
 
     public void showKeys(Key.KeyColor color)
@@ -83,7 +87,6 @@ public class UIHandler : MonoBehaviour {
     {
         if (player.hasGravityChanger)
         {
-
             float batteryInPercent = Mathf.Round((gravityChanger.getCurrentBattery() / gravityChanger.maxBattery) * 100);
 
             if(batteryInPercent < 100 && !hideBattery)
@@ -118,6 +121,19 @@ public class UIHandler : MonoBehaviour {
             }
 
         }
+    }
+
+    public void showRepairBar(float maxRepairTimer, float currentRepairTimer)
+    {
+        repairPanel.SetActive(true);
+        currentRepairTimer = maxRepairTimer - currentRepairTimer;
+        float repairInPercent = Mathf.Round((currentRepairTimer / maxRepairTimer) * 100);
+        repair.fillAmount = repairInPercent / 100;
+    }
+
+    public void disableRepairBar()
+    {
+        repairPanel.SetActive(false);
     }
 
     private void changeBatteryColor(float batteryLoad)

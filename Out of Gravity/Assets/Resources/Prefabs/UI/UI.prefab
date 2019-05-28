@@ -349,7 +349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1512382798787738
 GameObject:
   m_ObjectHideFlags: 1
@@ -1734,7 +1734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0.82
+  m_Text: 0.83
 --- !u!114 &114733228602696782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1927,7 +1927,9 @@ MonoBehaviour:
   blueKey: {fileID: 114297911602917882}
   greenKey: {fileID: 114664877062314880}
   battery: {fileID: 0}
+  repair: {fileID: 0}
   batteryPanel: {fileID: 0}
+  repairPanel: {fileID: 0}
   frames: {fileID: 114186187903196276}
   useInfo: {fileID: 0}
   batteryWarning: {fileID: 8300000, guid: 690f97381f818f847bf8f3e368f27dc8, type: 3}
