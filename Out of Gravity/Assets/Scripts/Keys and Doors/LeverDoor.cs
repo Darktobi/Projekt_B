@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LeverDoor : MonoBehaviour {
 
+    [SerializeField]
     public bool neededLeverStatus;
 	
 	// Update is called once per frame
