@@ -7,21 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenue : MonoBehaviour {
 
-    public void LoadScene(string sceneName)
+    public void StartGame()
     {
-        if (sceneName == "Prototype")
-        {
-            SceneManager.LoadScene("Prototype");
-        }
-       else if (sceneName == "Demo")
-        {
-            SceneManager.LoadScene("Demo");
-        }
-
-        else if (sceneName == "Level1")
-        {
-            SceneManager.LoadScene("Level1");
-        }
+        SceneManager.LoadScene(1);
     }
 
     public void ExtitGame()
