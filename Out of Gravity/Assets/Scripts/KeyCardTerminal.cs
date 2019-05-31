@@ -11,6 +11,7 @@ public class KeyCardTerminal : Terminal {
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        base.Start();
     }
 	
 	// Update is called once per frame
@@ -25,6 +26,7 @@ public class KeyCardTerminal : Terminal {
                 if (check())
                 {
                     door.OpenClose();
+                    changeSprite();
                 }
             }
 

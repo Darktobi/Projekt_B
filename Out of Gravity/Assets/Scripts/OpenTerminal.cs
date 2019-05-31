@@ -13,6 +13,7 @@ public class OpenTerminal : Terminal {
             if (Input.GetButtonDown("Interact"))
             {
                 door.OpenClose();
+                changeSprite();
             }
 
         }

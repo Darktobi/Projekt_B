@@ -6,12 +6,33 @@ public abstract class Terminal : MonoBehaviour {
 
     [SerializeField]
     protected Door door;
+    [SerializeField]
+    protected Sprite openSprite;
+    [SerializeField]
+    protected Sprite closedSprite;
     protected bool canUse;
 
+    protected SpriteRenderer spriteRend;
+
+
+
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
         canUse = false;
+        spriteRend = GetComponent<SpriteRenderer>();
 	}
+
+    protected void changeSprite()
+    {
+        if (door.isOpen)
+        {
+            spriteRend.sprite = openSprite;
+        }
+        else
+        {
+            spriteRend.sprite = closedSprite;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

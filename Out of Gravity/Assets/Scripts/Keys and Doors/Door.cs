@@ -7,7 +7,7 @@ public class Door : MonoBehaviour {
     public AudioClip doorOpen;
 
     [SerializeField]
-    private bool isOpen = false;
+    public bool isOpen { get; private set; }
     private AudioControler audioControler;
 
     protected void Start()
@@ -26,6 +26,7 @@ public class Door : MonoBehaviour {
             close();
         }
     }
+
 
     private void open()
     {
