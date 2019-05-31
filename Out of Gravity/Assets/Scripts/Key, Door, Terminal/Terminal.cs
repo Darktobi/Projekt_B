@@ -17,7 +17,7 @@ public abstract class Terminal : MonoBehaviour {
 
 
 	// Use this for initialization
-	protected void Start () {
+	protected virtual void Start () {
         canUse = false;
         spriteRend = GetComponent<SpriteRenderer>();
 	}

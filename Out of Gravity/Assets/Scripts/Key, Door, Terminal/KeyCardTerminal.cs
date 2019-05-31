@@ -9,7 +9,7 @@ public class KeyCardTerminal : Terminal {
     private Player player;
 
     // Use this for initialization
-    void Start () {
+    protected override void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         base.Start();
     }
