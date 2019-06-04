@@ -5,9 +5,8 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
     public AudioClip doorOpen;
+    public bool isOpen;
 
-    [SerializeField]
-    public bool isOpen { get; private set; }
     private AudioControler audioControler;
 
     protected void Start()

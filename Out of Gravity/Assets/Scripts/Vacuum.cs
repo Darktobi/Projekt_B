@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Vacuum : MonoBehaviour {
 
-    public AudioClip audioClip;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private Door neededOpenDoor;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (neededOpenDoor.isOpen)
+        {
+            transform.localScale = new Vector2(2.5f, 1);
+        }
+
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
