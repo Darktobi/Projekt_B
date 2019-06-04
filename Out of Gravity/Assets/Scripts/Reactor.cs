@@ -15,8 +15,9 @@ public class Reactor : MonoBehaviour {
 
     private bool canUse = false;
     private bool isRepaired = false;
-    public AudioClip audioClip;
+    public AudioClip repairSound;
     public AudioClip NoUse;
+    public AudioClip isRepairedSound;
     private AudioControler audioControler;
 
     private Player player;
@@ -73,7 +74,7 @@ public class Reactor : MonoBehaviour {
          if (!audioControler.SFXisPlaying())
           {
             Instantiate(particle);
-             audioControler.playSFX(audioClip);
+             audioControler.playSFX(repairSound);
           }
 
           if (repairTimer <= 0)
@@ -83,6 +84,7 @@ public class Reactor : MonoBehaviour {
              playerMovement.interruptMovement(false);
              repairTimer = maxRepairTimer;
              isRepaired = true;
+             audioControler.playSFX(isRepairedSound, 0.7f, 1);
              FindObjectOfType<UIHandler>().disableUseInfo();
              FindObjectOfType<UIHandler>().disableRepairBar();
             }
