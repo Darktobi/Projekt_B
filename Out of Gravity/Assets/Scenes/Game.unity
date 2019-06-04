@@ -1019,9 +1019,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 475846071}
     m_Modifications:
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 43.59
+      value: 36.58
       objectReference: {fileID: 0}
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1074,17 +1079,38 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Dies ist ein Beispieltext, der eingeblendet werden kann. Mit der "Benutzen"
-        Taste geht es weiter.
+      value: "Ok, die Nerds aus dem Labor haben wieder an was gebastelt. Anscheinend
+        so eine Art Nul-G-Ger\xE4t. Der Wei\xDFkittel war ganz versessen darauf zu
+        achten, dass ich das Ding fachgerecht verstaue."
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'Optional steht hier der zweite Satz, wenn es einen gibt. '
+      value: "E hat nicht viel erz\xE4hlt, aber es soll in einem gewissen Bereich
+        um seinen Tr\xE4ger herum die Schwerkraft ausschalten k\xF6nnen. In f\xFCnf
+        Tagen kommt ein Frachter vorbei und holt die Kiste ab. "
       objectReference: {fileID: 0}
     - target: {fileID: 1217515807121912, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_Name
       value: Computer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "Hoffe, dass der Typ mir dann nicht auch noch die ganze Zeit \xFCber
+        die Schulter guckt. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "Hoffe, dass der Typ mir dann nicht auch noch die ganze Zeit \xFCber
+        die Schulter guckt. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: "Hoffe, dass der Typ mir dann nicht auch noch die ganze Zeit \xFCber
+        die Schulter guckt. "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
@@ -1194,12 +1220,12 @@ Prefab:
     - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 517.32104
+      value: 30.484985
       objectReference: {fileID: 0}
     - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 291.0464
+      value: 17.143402
       objectReference: {fileID: 0}
     - target: {fileID: 224018869362843720, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
@@ -1229,12 +1255,12 @@ Prefab:
     - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 517.32104
+      value: 30.484985
       objectReference: {fileID: 0}
     - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 291.0464
+      value: 17.143402
       objectReference: {fileID: 0}
     - target: {fileID: 223501194724945058, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
@@ -1429,6 +1455,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 475846071}
     m_Modifications:
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 103.6
@@ -1484,17 +1515,28 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Dies ist ein Beispieltext, der eingeblendet werden kann. Mit der "Benutzen"
-        Taste geht es weiter.
+      value: "Der Hauptreaktor wurde besch\xE4digt. Ich w\xFCnschte, ich k\xF6nnte
+        ihn noch reparieren, aber die ersten Rettungskapseln starten bereits. Sollte
+        ein Bergungsteam das hier finden, dann hoffe ich, dass ihr genug Ersatzteile
+        habt. "
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'Optional steht hier der zweite Satz, wenn es einen gibt. '
+      value: "Wir haben hier noch ein paar Nanoreperaturkits, die f\xFCrs Erste reichen
+        sollten, allerdings wei\xDF ich nicht wie lange. Eins wird zudem nicht reichen,
+        nehmt am besten gleich drei. "
       objectReference: {fileID: 0}
     - target: {fileID: 1217515807121912, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_Name
       value: Computer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: "Ohne eine ordentliche Reparatur in einem Dock k\xF6nnt ihr damit f\xFCr
+        einen Tag, vielleicht auch zwei, die Energie wiederherstellen. \n\n-Chefmechanikerin
+        Eleonore Volkov"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
@@ -3499,7 +3541,7 @@ Prefab:
     - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
         type: 2}
       propertyPath: m_Tiles.Array.data[69].first.x
-      value: 43
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
         type: 2}
@@ -16388,7 +16430,7 @@ Prefab:
     - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
         type: 2}
       propertyPath: m_Tiles.Array.data[54].first.x
-      value: 43
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
         type: 2}
@@ -65296,6 +65338,76 @@ Prefab:
       propertyPath: m_TileSpriteArray.Array.data[68].m_RefCount
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[168].second.m_TileIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[168].second.m_TileSpriteIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].first.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].first.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].second.m_TileColorIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].second.m_TileFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].second.m_ColliderType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].second.m_TileIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[169].second.m_TileSpriteIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[170].first.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[170].first.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[170].second.m_TileColorIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[170].second.m_TileFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195094280631596426, guid: 7876038185c10de43b3847160f6b3e8f,
+        type: 2}
+      propertyPath: m_Tiles.Array.data[170].second.m_ColliderType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7876038185c10de43b3847160f6b3e8f, type: 2}
   m_IsPrefabParent: 0
@@ -65435,11 +65547,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.9
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -65791,6 +65903,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 475846071}
     m_Modifications:
+    - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4100450093481794, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 57.59
@@ -65846,8 +65963,7 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Dies ist ein Beispieltext, der eingeblendet werden kann. Mit der "Benutzen"
-        Taste geht es weiter.
+      value: "Hauptenergie Offline! Stromversorgung f\xFCr Betrieb erforderlich!"
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
@@ -66183,13 +66299,17 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Dies ist ein Beispieltext, der eingeblendet werden kann. Mit der "Benutzen"
-        Taste geht es weiter.
+      value: "Das Schiff wurde schwer besch\xE4digt. Die Explosion hat nicht nur den
+        Labortrakt in Mitleidenschaft gezogen, sondern auch weite Teile der internen
+        Struktur zuerst\xF6rt. Jetzt wurde auch noch die Au\xDFenh\xFClle von irgendwas
+        getroffen. "
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'Optional steht hier der zweite Satz, wenn es einen gibt. '
+      value: "Ohne einen Besuch im Dock werden wir das nicht reparieren k\xF6nnen.
+        Ich empfehle deshalb die Evakurierung des Schiffes. \n\n- Chefmechanikerin
+        Eleonore Volkov"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b, type: 2}
