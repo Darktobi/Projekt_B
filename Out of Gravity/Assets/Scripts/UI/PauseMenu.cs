@@ -18,8 +18,6 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Pause"))
         {
-
-
             if (isPaused)
             {
                 GoOnFunktions();
