@@ -1,20 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class KeyPadTerminal : Terminal {
 
+    public Text codeText;
+
     [SerializeField]
     private GameObject keyPad;
+    [SerializeField]
+    private GameObject highlightedButton;
 
     [SerializeField]
     private string neededCode;
     private string enteredCode;
+    private int maxCodeLength;
     private bool rightCodeEntered; 
 
 	// Use this for initialization
 	protected override void Start () {
         enteredCode = "";
+        maxCodeLength = 4;
         rightCodeEntered = false;
         base.Start();
 	}
@@ -43,7 +51,12 @@ public class KeyPadTerminal : Terminal {
 
     public void enterCode(string code)
     {
-        enteredCode += code;
+        if(enteredCode.Length < maxCodeLength)
+        {
+            enteredCode += code;
+            codeText.text = "Code: " + enteredCode;
+        }
+
     }
 
     public void checkCode()
@@ -64,16 +77,20 @@ public class KeyPadTerminal : Terminal {
     public void deleteCode()
     {
         enteredCode = "";
+        codeText.text = "Code:";
     }
 
     private void activateKeyPad()
     {
         keyPad.SetActive(true);
+        Time.timeScale = 0;
+        EventSystem.current.SetSelectedGameObject(highlightedButton);
     }
 
     private void disableKeyPad()
     {
         keyPad.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void openCloseDoor()

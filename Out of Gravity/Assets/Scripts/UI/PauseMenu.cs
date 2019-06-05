@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour {
     public Canvas canvasPause;
-    public GameObject button;
-    public GameObject exitButton;
+    public GameObject highlightedButton;
     private bool isPaused;
     // Use this for initialization
     void Start () {
@@ -37,7 +36,7 @@ public class PauseMenu : MonoBehaviour {
         Time.timeScale = 0;
         isPaused = true;
         canvasPause.gameObject.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(button);
+        EventSystem.current.SetSelectedGameObject(highlightedButton);
     }
 
     public void GoOnFunktions()

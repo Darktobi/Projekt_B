@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1621450510590574}
+  m_RootGameObject: {fileID: 1429074430531006}
   m_IsPrefabParent: 1
---- !u!1 &1621450510590574
+--- !u!1 &1429074430531006
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4435570911313342}
-  - component: {fileID: 212837355420847942}
-  - component: {fileID: 61513319928686940}
-  - component: {fileID: 114859648356333722}
-  - component: {fileID: 95777628393988734}
+  - component: {fileID: 4597273282434742}
+  - component: {fileID: 212527698653518480}
+  - component: {fileID: 61560406636911330}
+  - component: {fileID: 95258062414231466}
+  - component: {fileID: 114416412906690988}
   m_Layer: 0
   m_Name: GreenDoor
   m_TagString: Untagged
@@ -30,25 +30,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4435570911313342
+--- !u!4 &4597273282434742
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621450510590574}
+  m_GameObject: {fileID: 1429074430531006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.49, y: 3.7720163, z: 0.6505235}
+  m_LocalPosition: {x: 94.68809, y: 2.5587258, z: 0.6505235}
   m_LocalScale: {x: 3, y: 3, z: 1.0432116}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61513319928686940
+--- !u!61 &61560406636911330
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621450510590574}
+  m_GameObject: {fileID: 1429074430531006}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -68,13 +68,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34016937, y: 0.9925977}
   m_EdgeRadius: 0
---- !u!95 &95777628393988734
+--- !u!95 &95258062414231466
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621450510590574}
+  m_GameObject: {fileID: 1429074430531006}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 520eab7b0b1761f4aa6b5b10334c2cbe, type: 2}
@@ -85,26 +85,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114859648356333722
+--- !u!114 &114416412906690988
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621450510590574}
+  m_GameObject: {fileID: 1429074430531006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94bb2a8d89352fb4c8ac93ee10f5e9ff, type: 3}
+  m_Script: {fileID: 11500000, guid: acdb76f6e5184b546b07ca1720f5cce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: {fileID: 0}
-  doorBlock: {fileID: 0}
-  neededKeyColor: 2
---- !u!212 &212837355420847942
+  doorOpen: {fileID: 8300000, guid: 8e04edf92b58c73438366004f5dcc26f, type: 3}
+  isOpen: 0
+--- !u!212 &212527698653518480
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621450510590574}
+  m_GameObject: {fileID: 1429074430531006}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

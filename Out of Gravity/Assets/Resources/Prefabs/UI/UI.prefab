@@ -1734,7 +1734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0.83
+  m_Text: 0.85
 --- !u!114 &114733228602696782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1983,8 +1983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasPause: {fileID: 223840487324368666}
-  button: {fileID: 1925268325886248}
-  exitButton: {fileID: 1786024963013756}
+  highlightedButton: {fileID: 1925268325886248}
 --- !u!114 &114893313239340480
 MonoBehaviour:
   m_ObjectHideFlags: 1

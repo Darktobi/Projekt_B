@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4650255826257064}
   - component: {fileID: 212202400028333818}
   - component: {fileID: 61923683018286452}
-  - component: {fileID: 114920758031513806}
   - component: {fileID: 95535021088343244}
+  - component: {fileID: 114760915168005654}
   m_Layer: 0
   m_Name: CodeDoor
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1065366143547486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -14.52, y: 11.86, z: 0.6505235}
-  m_LocalScale: {x: 3, y: 6.87, z: 1.04321}
+  m_LocalScale: {x: 3, y: 3, z: 1.04321}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,7 +85,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114920758031513806
+--- !u!114 &114760915168005654
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -93,12 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1065366143547486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e425aa0d9a596fc43b2c9b889259890d, type: 3}
+  m_Script: {fileID: 11500000, guid: acdb76f6e5184b546b07ca1720f5cce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: {fileID: 0}
-  doorBlock: {fileID: 0}
-  neededCode: TEST
+  doorOpen: {fileID: 8300000, guid: 8e04edf92b58c73438366004f5dcc26f, type: 3}
+  isOpen: 0
 --- !u!212 &212202400028333818
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +133,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: a3fc1ab4ffce4c8449c14cf5e333014c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.36764705, g: 0.36494377, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
