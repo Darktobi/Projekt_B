@@ -81,8 +81,8 @@ MonoBehaviour:
   door: {fileID: 0}
   openSprite: {fileID: 21300516, guid: 1a2b20d8c68c0a047a66c566847bd9aa, type: 3}
   closedSprite: {fileID: 21300518, guid: 1a2b20d8c68c0a047a66c566847bd9aa, type: 3}
-  insertSprite: {fileID: 21300520, guid: 1a2b20d8c68c0a047a66c566847bd9aa, type: 3}
   neededKeyColor: 0
+  insertKeyCard: {fileID: 8300000, guid: 4e85bc351f4a55f4cafdd31b41394aca, type: 3}
 --- !u!212 &212328052331400080
 SpriteRenderer:
   m_ObjectHideFlags: 1

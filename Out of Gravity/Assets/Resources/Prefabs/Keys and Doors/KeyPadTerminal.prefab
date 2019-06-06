@@ -525,7 +525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1312106764939370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.98, y: 2.29, z: 0}
+  m_LocalPosition: {x: 87.98, y: -2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224284317496887418}
@@ -947,7 +947,10 @@ MonoBehaviour:
   codeText: {fileID: 114995277903754458}
   keyPad: {fileID: 1014831015024486}
   highlightedButton: {fileID: 1288039813373136}
-  neededCode: 1234
+  buttonSound: {fileID: 8300000, guid: 8e59deb560ae4c348a714a1898a196ac, type: 3}
+  CodeSucess: {fileID: 8300000, guid: 52ba52f7410c45c47adb6ebbcfcdb1c1, type: 3}
+  CodeWrong: {fileID: 8300000, guid: 2877908d4e3a5214ca6470f3bff80d8a, type: 3}
+  neededCode: 5281
 --- !u!114 &114263802059022220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1755,7 +1758,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114245051346082300}
-        m_MethodName: deleteCode
+        m_MethodName: pressDeleteCode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

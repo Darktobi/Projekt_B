@@ -11,14 +11,12 @@ public class LeverTerminal : Terminal {
     private LeverTerminal oppositeLever;
     [SerializeField]
     private AudioClip leverSound;
-    private AudioControler audioControler;
 
     private PlayerMovementControler playerMovement;
 
 
     // Use this for initialization
    protected override void Start () {
-        audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementControler>();
         base.Start();
     }
@@ -31,19 +29,17 @@ public class LeverTerminal : Terminal {
             FindObjectOfType<UIHandler>().showUseInfo();
 
             if(Input.GetButtonDown("Interact")){
-                changeStatus();
-                StartCoroutine(changeStatus());
+                StartCoroutine(activate());
             }
         }
 	}
 
-    IEnumerator changeStatus()
+    IEnumerator activate()
     {
         audioControler.playSFX(leverSound);
         playerMovement.interruptMovement(true);
         canUse = false;
         yield return new WaitForSeconds(0.5f);
-        playerMovement.interruptMovement(false);
         door.OpenClose();
         openedDoor.OpenClose();
         changeSprite();

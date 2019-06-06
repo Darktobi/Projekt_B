@@ -12,15 +12,23 @@ public class KeyPadTerminal : Terminal {
     private GameObject keyPad;
     [SerializeField]
     private GameObject highlightedButton;
-
+    [SerializeField]
+    private AudioClip buttonSound;
+    [SerializeField]
+    private AudioClip CodeSucess;
+    [SerializeField]
+    private AudioClip CodeWrong;
     [SerializeField]
     private string neededCode;
+
+    private PlayerMovementControler playerMovement;
     private string enteredCode;
     private int maxCodeLength;
     private bool rightCodeEntered; 
 
 	// Use this for initialization
 	protected override void Start () {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementControler>();
         enteredCode = "";
         maxCodeLength = 4;
         rightCodeEntered = false;
@@ -55,6 +63,7 @@ public class KeyPadTerminal : Terminal {
         {
             enteredCode += code;
             codeText.text = "Code: " + enteredCode;
+            audioControler.playSFX(buttonSound);
         }
 
     }
@@ -63,18 +72,37 @@ public class KeyPadTerminal : Terminal {
     {
         if(enteredCode == neededCode)
         {
-            openCloseDoor();
+            StartCoroutine(activate());
             rightCodeEntered = true;
         }
         else
         {
+            audioControler.playSFX(CodeWrong);
             deleteCode();
         }
 
         disableKeyPad();
     }
 
-    public void deleteCode()
+    public void pressDeleteCode()
+    {
+        audioControler.playSFX(buttonSound);
+        deleteCode();
+    }
+
+    IEnumerator activate()
+    {
+        audioControler.playSFX(CodeSucess);
+        playerMovement.interruptMovement(true);
+        canUse = false;
+        yield return new WaitForSeconds(0.6f);
+        openCloseDoor();
+        playerMovement.interruptMovement(false);
+        canUse = true;
+       
+    }
+
+    private void deleteCode()
     {
         enteredCode = "";
         codeText.text = "Code:";

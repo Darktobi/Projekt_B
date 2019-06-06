@@ -10,17 +10,19 @@ public abstract class Terminal : MonoBehaviour {
     protected Sprite openSprite;
     [SerializeField]
     protected Sprite closedSprite;
+    protected AudioControler audioControler;
+    protected SpriteRenderer spriteRend;
     protected bool canUse;
 
-    protected SpriteRenderer spriteRend;
 
 
 
 	// Use this for initialization
 	protected virtual void Start () {
-        canUse = false;
+        audioControler = GameObject.Find("SFX_Controler").GetComponent<AudioControler>();
         spriteRend = GetComponent<SpriteRenderer>();
-	}
+        canUse = false;
+    }
 
     protected void changeSprite()
     {
