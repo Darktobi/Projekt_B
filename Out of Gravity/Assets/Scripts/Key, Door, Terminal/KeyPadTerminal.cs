@@ -24,7 +24,9 @@ public class KeyPadTerminal : Terminal {
     private PlayerMovementControler playerMovement;
     private string enteredCode;
     private int maxCodeLength;
-    private bool rightCodeEntered; 
+    private float waitForCodeEnter = 0.2f;
+    private bool rightCodeEntered;
+    private bool keyPadActive;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -32,6 +34,7 @@ public class KeyPadTerminal : Terminal {
         enteredCode = "";
         maxCodeLength = 4;
         rightCodeEntered = false;
+        keyPadActive = false;
         base.Start();
 	}
 	
@@ -47,25 +50,43 @@ public class KeyPadTerminal : Terminal {
                 if (!rightCodeEntered)
                 {
                     activateKeyPad();
+                    
                 }
                 else
                 {
                     openCloseDoor();
                 }
             }
+        }
 
+        if (keyPadActive)
+        {
+
+            if(Input.GetButtonDown("KeyPad_A"))
+            {
+                enterCode("A");
+            }
+           else if (Input.GetButtonDown("KeyPad_B"))
+            {
+                enterCode("B");
+            }
+           else if (Input.GetButtonDown("KeyPad_Y"))
+            {
+                enterCode("Y");
+            }
+
+            if (enteredCode.Length == maxCodeLength)
+            {
+                checkCode();
+            }
         }
     }
 
-    public void enterCode(string code)
+    private void enterCode(string code)
     {
-        if(enteredCode.Length < maxCodeLength)
-        {
-            enteredCode += code;
-            codeText.text = "Code: " + enteredCode;
-            audioControler.playSFX(buttonSound);
-        }
-
+        enteredCode += code;
+        codeText.text = "Code: " + enteredCode;
+        audioControler.playSFX(buttonSound);
     }
 
     public void checkCode()
@@ -108,16 +129,17 @@ public class KeyPadTerminal : Terminal {
         codeText.text = "Code:";
     }
 
-    private void activateKeyPad()
+   private void activateKeyPad()
     {
         keyPad.SetActive(true);
+        keyPadActive = true;
         Time.timeScale = 0;
-        EventSystem.current.SetSelectedGameObject(highlightedButton);
     }
 
     private void disableKeyPad()
     {
         keyPad.SetActive(false);
+        keyPadActive = false;
         Time.timeScale = 1;
     }
 
