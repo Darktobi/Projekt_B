@@ -1508,7 +1508,7 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: "E hat nicht viel erz\xE4hlt, aber es soll in einem gewissen Bereich
+      value: "Er hat nicht viel erz\xE4hlt, aber es soll in einem gewissen Bereich
         um seinen Tr\xE4ger herum die Schwerkraft ausschalten k\xF6nnen. In f\xFCnf
         Tagen kommt ein Frachter vorbei und holt die Kiste ab. "
       objectReference: {fileID: 0}
@@ -1639,6 +1639,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 517.32104
+      objectReference: {fileID: 0}
+    - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 291.0464
+      objectReference: {fileID: 0}
+    - target: {fileID: 224212616935379188, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 224212616935379188, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 580.8586
+      objectReference: {fileID: 0}
+    - target: {fileID: 224018869362843720, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 31.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 224018869362843720, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -735.2886
+      objectReference: {fileID: 0}
     - target: {fileID: 114804506677136302, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: battery
@@ -1664,6 +1694,16 @@ Prefab:
       propertyPath: useInfo
       value: 
       objectReference: {fileID: 1436941487}
+    - target: {fileID: 224388910744194220, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.9494781
+      objectReference: {fileID: 0}
+    - target: {fileID: 224388910744194220, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.6185303
+      objectReference: {fileID: 0}
     - target: {fileID: 224732420156650664, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1674,60 +1714,70 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -1158.2885
       objectReference: {fileID: 0}
-    - target: {fileID: 223501194724945058, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1047809332}
-    - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 517.32104
-      objectReference: {fileID: 0}
-    - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 291.0464
-      objectReference: {fileID: 0}
-    - target: {fileID: 224212616935379188, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 224212616935379188, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 580.8586
-      objectReference: {fileID: 0}
     - target: {fileID: 114733228602696782, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1855282452}
-    - target: {fileID: 224018869362843720, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 31.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 224018869362843720, guid: bec5919810392cb4e91f07bec04b6298,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -735.2886
-      objectReference: {fileID: 0}
-    - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
+    - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.x
       value: 517.32104
       objectReference: {fileID: 0}
-    - target: {fileID: 224258629131574248, guid: bec5919810392cb4e91f07bec04b6298,
+    - target: {fileID: 224274183237604388, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 291.0464
       objectReference: {fileID: 0}
-    - target: {fileID: 114710547246353574, guid: bec5919810392cb4e91f07bec04b6298,
+    - target: {fileID: 223501194724945058, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1047809332}
+    - target: {fileID: 224690539363652844, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 267.44006
+      objectReference: {fileID: 0}
+    - target: {fileID: 224643952173230330, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 517.32104
+      objectReference: {fileID: 0}
+    - target: {fileID: 224643952173230330, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 291.0464
+      objectReference: {fileID: 0}
+    - target: {fileID: 224208660242676554, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904203750210096, guid: bec5919810392cb4e91f07bec04b6298,
         type: 2}
       propertyPath: m_Text
-      value: 0.91
+      value: 'Steuerung:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491473648547248, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_Text
+      value: Bewegen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114058710822990134, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_Text
+      value: Springen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114893313239340480, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_Text
+      value: Benutzen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004080360384300, guid: bec5919810392cb4e91f07bec04b6298,
+        type: 2}
+      propertyPath: m_Text
+      value: Schwerkraft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bec5919810392cb4e91f07bec04b6298, type: 2}
@@ -67188,11 +67238,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.2
+      value: 22.48
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.3
+      value: -7.58
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -67987,7 +68037,7 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1]
       value: "Ohne einen Besuch im Dock werden wir das nicht reparieren k\xF6nnen.
-        Ich empfehle deshalb die Evakurierung des Schiffes. \n\n- Chefmechanikerin
+        Ich empfehle deshalb die Evakuierung des Schiffes. \n\n- Chefmechanikerin
         Eleonore Volkov"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
