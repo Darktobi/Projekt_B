@@ -1563,7 +1563,7 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0]
       value: "Ok, die Nerds aus dem Labor haben wieder an was gebastelt. Anscheinend
-        so eine Art Nul-G-Ger\xE4t. Der Wei\xDFkittel war ganz versessen darauf zu
+        so eine Art Null-G-Ger\xE4t. Der Wei\xDFkittel war ganz versessen darauf zu
         achten, dass ich das Ding fachgerecht verstaue."
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
@@ -1581,7 +1581,7 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[2]
       value: "Hoffe, dass der Typ mir dann nicht auch noch die ganze Zeit \xFCber
-        die Schulter guckt. "
+        die Schulter guckt. \n\n- Chefmechanikerin Eleonore Volkov"
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
@@ -2232,7 +2232,7 @@ Prefab:
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: "Und sollte die untere T\xFCr veriegelt sein, lautet der Code: ABBY\n\n-Chefmechanikerin
+      value: "Und sollte die untere T\xFCr verriegelt sein, lautet der Code: ABBY\n\n-Chefmechanikerin
         Eleonore Volkov"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -68708,11 +68708,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.43
+      value: -6.52
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 4049956712707400, guid: bdf601ac76dadd1438a7c68c4b68afe0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -69466,7 +69466,7 @@ Prefab:
       propertyPath: dialogue.sentences.Array.data[0]
       value: "Das Schiff wurde schwer besch\xE4digt. Die Explosion hat nicht nur den
         Labortrakt in Mitleidenschaft gezogen, sondern auch weite Teile der internen
-        Struktur zuerst\xF6rt. Jetzt wurde auch noch die "
+        Struktur zerst\xF6rt. Jetzt wurde auch noch die"
       objectReference: {fileID: 0}
     - target: {fileID: 114052897560796992, guid: 75ec8dd3cf024cc4c9b885ba5479ac7b,
         type: 2}
